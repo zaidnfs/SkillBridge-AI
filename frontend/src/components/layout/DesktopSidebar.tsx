@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 import {
   LogOut,
   User as UserIcon,
-  Palette,
   PanelLeftClose,
   PanelLeft,
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { cn } from '@/lib/utils';
-import { KoboyoSparkle, KoboyoBrain } from '@/components/icons/Koboyo';
+import { KoboyoBrain } from '@/components/icons/Koboyo';
+import { BrandLogo } from '@/components/icons/BrandLogo';
 import { ReiconTerminal, ReiconRadar, ReiconAtsDoc } from '@/components/icons/Reicon';
 
 interface NavItem {
@@ -83,9 +83,7 @@ export const DesktopSidebar: React.FC = () => {
             to="/"
             className="flex items-center gap-2.5 font-bold text-base text-white tracking-tight group overflow-hidden"
           >
-            <div className="h-9 w-9 rounded-lg bg-[#4CD681] flex items-center justify-center text-[#003822] shadow-xs group-hover:scale-105 transition-transform shrink-0">
-              <KoboyoSparkle size={18} strokeWidth={2.2} />
-            </div>
+            <BrandLogo size={36} className="shadow-xs group-hover:scale-105 transition-transform" />
 
             <div
               className={cn(
@@ -185,42 +183,6 @@ export const DesktopSidebar: React.FC = () => {
               </NavLink>
             );
           })}
-
-          <div className="pt-3">
-            {isExpanded && (
-              <div className="px-2.5 pb-2 text-[10px] font-semibold text-[#D1DDD4]/65 font-mono uppercase tracking-wider transition-opacity duration-200">
-                Design System
-              </div>
-            )}
-
-            <NavLink
-              to="/design"
-              title={!isExpanded ? 'Design Showcase' : undefined}
-              className={({ isActive }) =>
-                cn(
-                  'flex items-center rounded-lg text-xs font-semibold transition-all h-10 px-2.5',
-                  isExpanded ? 'justify-between' : 'justify-center',
-                  isActive
-                    ? 'bg-[#008855] text-white border border-[#4CD681]/45 shadow-xs font-bold'
-                    : 'text-[#D1DDD4] hover:bg-[#008855]/35 hover:text-white'
-                )
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <Palette size={17} className={isActive ? 'text-[#4CD681]' : 'text-current'} />
-                    {isExpanded && <span className="whitespace-nowrap">Showcase</span>}
-                  </div>
-                  {isExpanded && (
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#003822] text-[#4CD681] border border-[#00A264]/40">
-                      Active
-                    </span>
-                  )}
-                </>
-              )}
-            </NavLink>
-          </div>
         </nav>
 
         {/* User profile & Logout footer */}

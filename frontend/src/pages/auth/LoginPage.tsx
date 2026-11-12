@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { Eye, EyeOff, AlertCircle, ArrowRight, Sparkles, Check } from 'lucide-react';
 import { KoboyoSparkle } from '@/components/icons/Koboyo';
+import { BrandLogo } from '@/components/icons/BrandLogo';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
 import authHeroImg from '@/assets/auth-hero.jpg';
 
@@ -149,9 +150,7 @@ export const LoginPage: React.FC = () => {
           {/* Top Brand Header & Switch Link */}
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="h-8 w-8 rounded-xl bg-[#008855] flex items-center justify-center text-white shadow-sm shadow-[#008855]/20 group-hover:scale-105 transition-transform">
-                <KoboyoSparkle size={17} strokeWidth={2} />
-              </div>
+              <BrandLogo size={32} className="shadow-sm shadow-[#008855]/20 group-hover:scale-105 transition-transform" />
               <span className="font-semibold tracking-tight text-base text-[#0A1A12]">
                 SkillBridge <span className="font-mono text-xs text-[#008855] font-bold">AI</span>
               </span>

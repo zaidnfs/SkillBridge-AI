@@ -8,7 +8,6 @@ LaTeX-inspired ATS-compliant DOCX resume matching crisp academic/engineering typ
 - Right-aligned tab stops for Organization/Location and Role/Date headers
 - Merged, properly spaced bullet points with bolded target-job & technical keywords
 """
-
 import io
 import re
 from typing import Any
@@ -34,18 +33,12 @@ COLOR_RULE_HEX = "262626"
 
 # Section heading regex definitions (supports "& Interests", "& Training", etc.)
 SECTION_HEADER_SPECS: list[tuple[str, str]] = [
-    (
-        "summary",
-        r"(?:professional\s+summary|career\s+objective|summary|profile|about\s+me)",
-    ),
+    ("summary", r"(?:professional\s+summary|career\s+objective|summary|profile|about\s+me)"),
     (
         "experience",
         r"(?:work\s+experience|professional\s+experience|employment\s+history|work\s+history|experience|internships)",
     ),
-    (
-        "projects",
-        r"(?:personal\s+projects|academic\s+projects|key\s+projects|projects)",
-    ),
+    ("projects", r"(?:personal\s+projects|academic\s+projects|key\s+projects|projects)"),
     ("education", r"(?:academic\s+background|academic\s+qualifications|education)"),
     (
         "skills",
@@ -58,114 +51,42 @@ SECTION_HEADER_SPECS: list[tuple[str, str]] = [
 ]
 
 _SOFT_WRAP_SUFFIXES = {
-    "tem",
-    "netes",
-    "neous",
-    "ment",
-    "ments",
-    "tion",
-    "tions",
-    "sion",
-    "sions",
-    "ing",
-    "ers",
-    "ies",
-    "able",
-    "ible",
-    "cal",
-    "ally",
-    "ize",
-    "ise",
-    "ship",
-    "ware",
-    "form",
-    "work",
-    "tect",
-    "tected",
-    "tecture",
-    "line",
-    "lines",
+    "tem", "netes", "neous", "ment", "ments", "tion", "tions", "sion", "sions",
+    "ing", "ers", "ies", "able", "ible", "cal", "ally", "ize", "ise", "ship",
+    "ware", "form", "work", "tect", "tected", "tecture", "line", "lines",
 }
 
 _PROTECTED_GLUED_PREFIXES = (
-    "a",
-    "an",
-    "in",
-    "on",
-    "at",
-    "by",
-    "to",
-    "of",
-    "or",
-    "as",
-    "via",
-    "with",
-    "and",
-    "for",
-    "from",
-    "using",
-    "within",
-    "across",
-    "into",
-    "over",
-    "under",
-    "the",
-    "raw",
-    "standard",
-    "pretrained",
-    "concurrent",
-    "sustaining",
-    "achieving",
-    "building",
-    "built",
-    "designed",
-    "delivering",
-    "supporting",
-    "automated",
+    "a", "an", "in", "on", "at", "by", "to", "of", "or", "as", "via",
+    "with", "and", "for", "from", "using", "within", "across", "into",
+    "over", "under", "the", "raw", "standard", "pretrained", "concurrent",
+    "sustaining", "achieving", "building", "built", "designed", "delivering",
+    "supporting", "automated", "multi-tenant", "per-tenant",
 )
 
 _KNOWN_TECH_WORDS = (
-    "HuggingFace",
-    "Transformers",
-    "PostgreSQL",
-    "Kubernetes",
-    "JavaScript",
-    "TypeScript",
-    "MongoDB",
-    "Express\\.js",
-    "Node\\.js",
-    "FastAPI",
-    "GitHub",
-    "Tailwind",
-    "Python",
-    "Django",
-    "Pandas",
-    "NumPy",
-    "Docker",
-    "HTMX",
-    "React",
-    "Flask",
-    "Linux",
-    "Redis",
-    "BERT",
-    "RBAC",
-    "CRUD",
-    "CI/CD",
-    "REST",
-    "NLP",
-    "SQL",
-    "AWS",
-    "GCP",
-    "Go",
-    "Git",
+    "HuggingFace", "Transformers", "PostgreSQL", "Kubernetes", "JavaScript",
+    "TypeScript", "MongoDB", "Express\\.js", "Node\\.js", "FastAPI", "GitHub",
+    "Tailwind", "Python", "Django", "Pandas", "NumPy", "Docker", "HTMX",
+    "React", "Flask", "Linux", "Redis", "BERT", "RBAC", "CRUD", "CI/CD",
+    "REST", "NLP", "AWS", "GCP", "Git",
 )
 
-_LOCATION_RE = re.compile(
-    r"(?:Bengaluru|Bangalore|Hyderabad|Pune|Mumbai|Delhi|Chennai|Lucknow|Kolkata|"
-    r"Noida|Gurgaon|Gurugram|West\s+Bengal|Karnataka|Maharashtra|India|USA|UK|"
-    r"Remote|San\s+Francisco|New\s+York|London|Berlin|Singapore)",
-    re.IGNORECASE,
+# Tech words safe to split before a lowercase continuation word (excludes Go/SQL/Git)
+_SUFFIX_SAFE_TECH_WORDS = (
+    "HuggingFace", "Transformers", "PostgreSQL", "Kubernetes", "JavaScript",
+    "TypeScript", "MongoDB", "FastAPI", "GitHub", "Tailwind", "Python",
+    "Django", "Pandas", "NumPy", "Docker", "HTMX", "React", "Flask",
+    "Linux", "Redis", "BERT", "RBAC", "CRUD", "CI/CD", "REST", "NLP",
 )
+
+_CITY_NAME_PATTERN = (
+    r"(?:Bengaluru|Bangalore|Hyderabad|Pune|Mumbai|Delhi|New\s+Delhi|Chennai|"
+    r"Lucknow|Kolkata|Noida|Gurgaon|Gurugram|West\s+Bengal|San\s+Francisco|"
+    r"New\s+York|London|Berlin|Singapore|Remote)"
+)
+
+_LOCATION_RE = re.compile(_CITY_NAME_PATTERN, re.IGNORECASE)
 
 _DATE_SPAN_RE = re.compile(
     r"(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+\d{4}"
@@ -182,6 +103,7 @@ def _fix_hyphen_wrap(match: re.Match[str]) -> str:
         len(left) <= 4
         or right.lower() in _SOFT_WRAP_SUFFIXES
         or left.lower() in {"sys", "kuber", "simulta", "deploy"}
+        or right.lower().startswith("netes")
     ):
         return f"{left}{right}"
     return f"{left}-{right}"
@@ -216,19 +138,25 @@ def clean_extracted_resume_text(text: str) -> str:
 
     # 5. Repair font-switch glued words around known tech terms & prepositions
     tech_alt = "|".join(_KNOWN_TECH_WORDS)
+    suffix_safe_alt = "|".join(_SUFFIX_SAFE_TECH_WORDS)
     prefix_alt = "|".join(_PROTECTED_GLUED_PREFIXES)
     cleaned = re.sub(
-        rf"\b({prefix_alt})(?=(?:{tech_alt})\b)",
+        rf"\b({prefix_alt}|[a-z]+-tenant)(?=(?:{tech_alt}))",
         r"\1 ",
         cleaned,
     )
     cleaned = re.sub(
-        rf"([a-z])({tech_alt})(?=\b|[^A-Za-z])",
+        rf"([a-z])({tech_alt})(?=\b|[^A-Za-z]|[a-z])",
         r"\1 \2",
         cleaned,
     )
     cleaned = re.sub(
-        rf"\b({tech_alt})(and|or|in|on|by|to|of|as|for|via|with|from|using|within|across|while|that|is|are|was|were)\b",
+        rf"\b({suffix_safe_alt})(?=[a-z]{{3,}})",
+        r"\1 ",
+        cleaned,
+    )
+    cleaned = re.sub(
+        rf"\b({tech_alt})\s+(and|or|in|on|by|to|of|as|for|via|with|from|using|within|across|while|that|is|are|was|were)\b",
         r"\1 \2",
         cleaned,
     )
@@ -237,11 +165,20 @@ def clean_extracted_resume_text(text: str) -> str:
         r"\1 \2",
         cleaned,
     )
-    cleaned = re.sub(
-        rf"\b({tech_alt})(?=[a-z]{{3,}})",
-        r"\1 ",
-        cleaned,
-    )
+    # Handle glued monospace/bold spans like "net/httplibrary", "socketsinGo", "rawTCP"
+    cleaned = re.sub(r"\b(raw)(TCP)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"\b(standard)(net/http)(?=[a-z])", r"\1 \2 ", cleaned)
+    cleaned = re.sub(r"(net/http)(?=[a-z])", r"\1 ", cleaned)
+    cleaned = re.sub(r"\b(sockets)(in)(Go)\b", r"\1 \2 \3", cleaned)
+    cleaned = re.sub(r"\b(sockets)(in)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"\b(using)(goroutines)(and)\b", r"\1 \2 \3", cleaned)
+    cleaned = re.sub(r"\b(goroutines)(and)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"(-based)(?=[a-z])", r"\1 ", cleaned)
+    cleaned = re.sub(r"\b(modules)(for)(event)(creation)\b", r"\1 \2 \3 \4", cleaned)
+    cleaned = re.sub(r"\b(participant)(registration)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"\b(and)(scheduling)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"\b(supporting)(management)\b", r"\1 \2", cleaned)
+    cleaned = re.sub(r"\b(NLP)\s+(based)\b", r"\1-\2", cleaned)
 
     # Normalize extra spaces inside lines while preserving newlines
     lines = [re.sub(r"[ \t]{2,}", " ", line).strip() for line in cleaned.split("\n")]
@@ -262,7 +199,6 @@ def parse_resume_sections(text: str) -> dict[str, str]:
         f"(?P<{name}>{regex})" for name, regex in SECTION_HEADER_SPECS
     )
 
-    # Match either standalone heading line OR "Heading: inline content"
     line_pattern = re.compile(
         rf"(?im)^[ \t]*(?:{header_alt})[ \t]*(?::[ \t]*(?P<inline>.*)|[ \t]*)$"
     )
@@ -328,7 +264,6 @@ def extract_candidate_header_details(
 
     if header_lines:
         first_line = header_lines[0]
-        # Treat first line as candidate name if it has no email/URL/phone/pipe
         if (
             "@" not in first_line
             and "|" not in first_line
@@ -336,7 +271,6 @@ def extract_candidate_header_details(
             and not re.search(r"\d{5,}", first_line)
             and len(first_line.split()) <= 6
         ):
-            # Strip role suffix if written like "Jane Smith - Machine Learning Engineer"
             candidate_name = first_line.split(" - ")[0].strip()
 
         for line in header_lines[1:]:
@@ -366,13 +300,9 @@ def extract_candidate_header_details(
 
     links_contact: list[str] = []
     if contact.get("linkedin"):
-        links_contact.append(
-            re.sub(r"^https?://(www\.)?", "", str(contact["linkedin"]), flags=re.I)
-        )
+        links_contact.append(re.sub(r"^https?://(www\.)?", "", str(contact["linkedin"]), flags=re.I))
     if contact.get("github"):
-        links_contact.append(
-            re.sub(r"^https?://(www\.)?", "", str(contact["github"]), flags=re.I)
-        )
+        links_contact.append(re.sub(r"^https?://(www\.)?", "", str(contact["github"]), flags=re.I))
 
     return {
         "candidate_name": candidate_name,
@@ -399,12 +329,7 @@ def _merge_wrapped_lines(raw_text: str) -> list[str]:
         elif not merged:
             merged.append(line)
         elif merged[-1].startswith("• "):
-            # Continue previous bullet unless this line clearly starts a new entry header
-            if (
-                has_date_or_loc
-                and len(line) < 95
-                and not merged[-1].endswith((",", ";", "and", "or"))
-            ):
+            if has_date_or_loc and len(line) < 95 and not merged[-1].endswith((",", ";", "and", "or")):
                 merged.append(line)
             else:
                 merged[-1] = f"{merged[-1]} {line}"
@@ -426,14 +351,24 @@ def _split_left_right_header(line: str) -> tuple[str, str]:
         if left and right:
             return left, right
 
-    # Look for trailing "City, Country" / "City, India"
     loc_match = re.search(
-        r"\s+([A-Z][A-Za-z\s]+,\s*(?:India|USA|UK|Canada|Germany|Singapore|[A-Z]{2}))$",
+        rf"\s+({_CITY_NAME_PATTERN}(?:,\s*(?:India|USA|UK|Canada|Germany|Singapore|[A-Z]{{2}}))?)$",
         line,
+        re.IGNORECASE,
     )
     if loc_match:
         left = line[: loc_match.start()].strip(" -|–—")
         right = loc_match.group(1).strip()
+        if left and right:
+            return left, right
+
+    generic_loc = re.search(
+        r"\s+([A-Z][a-z]+,\s*(?:India|USA|UK|Canada|Germany|Singapore|[A-Z]{2}))$",
+        line,
+    )
+    if generic_loc:
+        left = line[: generic_loc.start()].strip(" -|–—")
+        right = generic_loc.group(1).strip()
         if left and right:
             return left, right
 
@@ -467,7 +402,6 @@ def _parse_entry_blocks(section_text: str, mode: str) -> list[dict[str, Any]]:
             continue
 
         left, right = _split_left_right_header(line)
-        # Start a new entry block
         current = {
             "title_left": left,
             "title_right": right,
@@ -476,10 +410,8 @@ def _parse_entry_blocks(section_text: str, mode: str) -> list[dict[str, Any]]:
             "bullets": [],
         }
 
-        # Check next line for role / degree / tech-stack subtitle
         if i + 1 < len(lines) and not lines[i + 1].startswith("• "):
             next_line = lines[i + 1]
-            # Avoid consuming the next distinct project/company if current line had no right-hand date/loc
             next_left, next_right = _split_left_right_header(next_line)
             if mode == "projects" or next_right or not right:
                 current["sub_left"] = next_left
@@ -566,9 +498,7 @@ def _add_rich_runs_with_keyword_bolding(
         else:
             patterns.append(escaped)
 
-    combined = (
-        re.compile(f"({'|'.join(patterns)})", re.IGNORECASE) if patterns else None
-    )
+    combined = re.compile(f"({'|'.join(patterns)})", re.IGNORECASE) if patterns else None
     if not combined:
         run = paragraph.add_run(text)
         run.font.name = FONT_FAMILY
@@ -689,7 +619,11 @@ def _render_skills_section(
                 if len(label.split()) <= 5 and rest.strip():
                     parsed_rows.append((label.strip(), rest.strip()))
             elif clean:
-                parsed_rows.append(("Core Competencies", clean))
+                if parsed_rows:
+                    prev_label, prev_rest = parsed_rows[-1]
+                    parsed_rows[-1] = (prev_label, f"{prev_rest} {clean}")
+                else:
+                    parsed_rows.append(("Core Competencies", clean))
 
     if parsed_rows:
         for label, items_str in parsed_rows:
@@ -704,7 +638,6 @@ def _render_skills_section(
             lbl_run.font.bold = True
             lbl_run.font.color.rgb = COLOR_TEXT
 
-            # Prioritize target-matched skills within the category row
             tokens = [tok.strip() for tok in items_str.split(",") if tok.strip()]
             if len(tokens) > 1 and target_lower:
                 matched_toks = [t for t in tokens if t.lower() in target_lower]
@@ -718,7 +651,6 @@ def _render_skills_section(
             )
         return
 
-    # Flat candidate skills fallback
     matched = [s for s in candidate_skills if s.lower() in target_lower]
     other = [s for s in candidate_skills if s not in matched]
     ordered_skills = matched + other
@@ -746,7 +678,6 @@ def _render_certifications_section(doc: docx.Document, certs_text: str) -> None:
     Render Certifications & Training in a compact, borderless 2-column grid
     mirroring the LaTeX minipage layout.
     """
-    # Split inline multi-bullet lines such as "• Cert A • Cert B"
     raw_items: list[str] = []
     for chunk in re.split(r"•", certs_text):
         clean = " ".join(chunk.split()).strip(" -*")
@@ -783,8 +714,7 @@ def _render_certifications_section(doc: docx.Document, certs_text: str) -> None:
         bullet.font.size = Pt(9.5)
         bullet.font.color.rgb = COLOR_TEXT
 
-        # Bold title portion before " — " or " - "
-        parts = re.split(r"\s+[—–-]\s+", cert, maxsplit=1)
+        parts = re.split(r"\s*[—–]\s*|\s+-\s+", cert, maxsplit=1)
         title_run = p.add_run(parts[0].strip())
         title_run.font.name = FONT_FAMILY
         title_run.font.size = Pt(9.5)
@@ -808,7 +738,6 @@ def build_ats_resume_docx(
     """
     doc = docx.Document()
 
-    # Configure A4 page & LaTeX-matched margins
     for sec in doc.sections:
         sec.page_width = Inches(PAGE_WIDTH_INCHES)
         sec.page_height = Inches(PAGE_HEIGHT_INCHES)
@@ -821,8 +750,6 @@ def build_ats_resume_docx(
     contact = resume_data.get("contact_info", {}) or {}
     candidate_skills = list(resume_data.get("skills", []) or [])
 
-    # Re-parse clean sections when extracted_text is available to ensure
-    # Skills & Interests / Certifications & Training are separated cleanly.
     sections = dict(resume_data.get("sections", {}) or {})
     if extracted_text:
         reparsed = parse_resume_sections(extracted_text)
@@ -845,9 +772,7 @@ def build_ats_resume_docx(
 
     highlight_terms = list(dict.fromkeys(target_skills + candidate_skills))
 
-    # -------------------------------------------------------------------------
-    # Header Block (Centered Name + Contact Lines)
-    # -------------------------------------------------------------------------
+    # Header Block
     name_p = doc.add_paragraph()
     name_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     name_p.paragraph_format.space_before = Pt(0)
@@ -878,23 +803,13 @@ def build_ats_resume_docx(
         r2.font.size = Pt(9.5)
         r2.font.color.rgb = COLOR_DARKGRAY
 
-    # -------------------------------------------------------------------------
-    # Optional Summary (rendered if present in resume or if resume lacks sections)
-    # -------------------------------------------------------------------------
+    # Optional Summary
     summary_text = sections.get("summary", "").strip()
-    if summary_text or (
-        not sections.get("experience") and not sections.get("projects")
-    ):
+    if summary_text or (not sections.get("experience") and not sections.get("projects")):
         _add_small_caps_heading(doc, "PROFESSIONAL SUMMARY")
         if not summary_text:
-            role_phrase = (
-                f" seeking opportunities as {target_title}" if target_title else ""
-            )
-            top_skills = (
-                ", ".join(candidate_skills[:6])
-                if candidate_skills
-                else "software engineering"
-            )
+            role_phrase = f" seeking opportunities as {target_title}" if target_title else ""
+            top_skills = ", ".join(candidate_skills[:6]) if candidate_skills else "software engineering"
             summary_text = (
                 f"Results-driven technical professional{role_phrase}. "
                 f"Proficient in {top_skills}, with demonstrated engineering foundations."
@@ -903,34 +818,20 @@ def build_ats_resume_docx(
         sp.paragraph_format.space_before = Pt(1)
         sp.paragraph_format.space_after = Pt(2)
         sp.paragraph_format.line_spacing = 1.1
-        _add_rich_runs_with_keyword_bolding(
-            sp, summary_text, highlight_terms, font_size=9.5
-        )
+        _add_rich_runs_with_keyword_bolding(sp, summary_text, highlight_terms, font_size=9.5)
 
-    # -------------------------------------------------------------------------
-    # Work / Professional Experience
-    # -------------------------------------------------------------------------
+    # Professional Experience
     _add_small_caps_heading(doc, "PROFESSIONAL EXPERIENCE")
     exp_text = sections.get("experience", "").strip()
     if exp_text:
         for entry in _parse_entry_blocks(exp_text, mode="experience"):
             if entry["title_left"] or entry["title_right"]:
                 _add_entry_header(
-                    doc,
-                    entry["title_left"],
-                    entry["title_right"],
-                    bold=True,
-                    italic=False,
-                    space_before=2.5,
+                    doc, entry["title_left"], entry["title_right"], bold=True, italic=False, space_before=2.5
                 )
             if entry["sub_left"] or entry["sub_right"]:
                 _add_entry_header(
-                    doc,
-                    entry["sub_left"],
-                    entry["sub_right"],
-                    bold=False,
-                    italic=True,
-                    space_before=0.0,
+                    doc, entry["sub_left"], entry["sub_right"], bold=False, italic=True, space_before=0.0
                 )
             for bullet in entry["bullets"]:
                 _add_bullet_paragraph(doc, bullet, highlight_terms)
@@ -941,9 +842,7 @@ def build_ats_resume_docx(
             highlight_terms,
         )
 
-    # -------------------------------------------------------------------------
     # Projects
-    # -------------------------------------------------------------------------
     proj_text = sections.get("projects", "").strip()
     if proj_text:
         _add_small_caps_heading(doc, "PROJECTS")
@@ -959,47 +858,28 @@ def build_ats_resume_docx(
                 )
             if entry["sub_left"] or entry["sub_right"]:
                 _add_entry_header(
-                    doc,
-                    entry["sub_left"],
-                    entry["sub_right"],
-                    bold=False,
-                    italic=True,
-                    space_before=0.0,
+                    doc, entry["sub_left"], entry["sub_right"], bold=False, italic=True, space_before=0.0
                 )
             for bullet in entry["bullets"]:
                 _add_bullet_paragraph(doc, bullet, highlight_terms)
 
-    # -------------------------------------------------------------------------
     # Education
-    # -------------------------------------------------------------------------
     edu_text = sections.get("education", "").strip()
     if edu_text:
         _add_small_caps_heading(doc, "EDUCATION")
         for entry in _parse_entry_blocks(edu_text, mode="education"):
             if entry["title_left"] or entry["title_right"]:
                 _add_entry_header(
-                    doc,
-                    entry["title_left"],
-                    entry["title_right"],
-                    bold=True,
-                    italic=False,
-                    space_before=2.0,
+                    doc, entry["title_left"], entry["title_right"], bold=True, italic=False, space_before=2.0
                 )
             if entry["sub_left"] or entry["sub_right"]:
                 _add_entry_header(
-                    doc,
-                    entry["sub_left"],
-                    entry["sub_right"],
-                    bold=True,
-                    italic=True,
-                    space_before=0.0,
+                    doc, entry["sub_left"], entry["sub_right"], bold=True, italic=True, space_before=0.0
                 )
             for bullet in entry["bullets"]:
                 _add_bullet_paragraph(doc, bullet, highlight_terms)
 
-    # -------------------------------------------------------------------------
     # Technical Skills
-    # -------------------------------------------------------------------------
     _render_skills_section(
         doc,
         skills_text=sections.get("skills", "").strip(),
@@ -1007,9 +887,7 @@ def build_ats_resume_docx(
         target_skills=target_skills,
     )
 
-    # -------------------------------------------------------------------------
-    # Certifications & Training (2-column borderless grid)
-    # -------------------------------------------------------------------------
+    # Certifications & Training
     certs_text = sections.get("certifications", "").strip()
     if certs_text:
         _render_certifications_section(doc, certs_text)

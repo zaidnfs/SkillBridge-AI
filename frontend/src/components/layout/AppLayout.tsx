@@ -4,7 +4,7 @@ import { DesktopSidebar } from './DesktopSidebar';
 import { MobileBottomNav } from './MobileBottomNav';
 import { LogOut } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
-import { KoboyoSparkle } from '@/components/icons/Koboyo';
+import { BrandLogo } from '@/components/icons/BrandLogo';
 
 export const AppLayout: React.FC = () => {
   const { user, logout } = useAuth();
@@ -27,9 +27,7 @@ export const AppLayout: React.FC = () => {
         {/* Mobile Header (visible only on small screens) */}
         <header className="md:hidden flex items-center justify-between h-14 px-4 border-b border-[#E2E8E5] bg-white/95 backdrop-blur-md sticky top-0 z-30 shadow-xs">
           <NavLink to="/" className="flex items-center gap-2 font-bold text-base text-[#004D2F]">
-            <div className="h-7 w-7 rounded-lg bg-[#008855] flex items-center justify-center text-white font-bold shadow-xs">
-              <KoboyoSparkle size={15} />
-            </div>
+            <BrandLogo size={28} className="shadow-xs" />
             <span>
               SkillBridge <span className="font-mono text-xs text-[#008855]">AI</span>
             </span>

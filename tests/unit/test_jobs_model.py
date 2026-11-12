@@ -303,3 +303,16 @@ class TestJobPostingEndpoints:
         # Ensure raw provider tracking internals are not exposed
         assert "raw_data" not in response.data
         assert "adref" not in response.data
+
+    def test_seed_demo_jobs_command_is_idempotent(self):
+        """Verify seed_demo_jobs populates demo jobs cleanly and is idempotent."""
+        from django.core.management import call_command
+
+        assert JobPosting.objects.count() == 0
+        call_command("seed_demo_jobs")
+        first_count = JobPosting.objects.count()
+        assert first_count >= 50
+
+        # Running a second time updates cleanly without duplicates
+        call_command("seed_demo_jobs")
+        assert JobPosting.objects.count() == first_count

@@ -1,0 +1,4205 @@
+[
+  {
+    "title": "React JS Developer",
+    "company": "Creeno Solutions Private Limited",
+    "description": "Description We are seeking an experienced React JS Developer to join our dynamic team in India. The ideal candidate will have a strong background in front-end development, specializing in React.js, and will be responsible for building and optimizing user-facing applications. Responsibilities Develop user interface components using React.js concepts and workflows such as Redux, Flux, and Context API. Translate designs and wireframes into high-quality code. Optimize components for maximum perform…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-06T08:01:30+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5913245482?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5913245482",
+    "extracted_skills": [
+      "React",
+      "Redux"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Backend Developer",
+    "company": "Gravity Engineering Services Pvt Ltd",
+    "description": "We are hiring a Python Backend Developer to build fast, reliable APIs and backend services. Responsibilities Build REST APIs with FastAPI or Flask Design database schemas and queries in PostgreSQL Containerise and deploy services with Docker Write clean, tested and maintainable Python Requirements 1 years of backend development in Python Experience with FastAPI, Flask or a similar framework Good SQL and database design skills Skills:- Python, FastAPI and Flask",
+    "location_city": "Delhi",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 400000.0,
+    "salary_max": 3000000.0,
+    "currency": "INR",
+    "posted_date": "2026-10-05T16:35:22+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5912389088?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5912389088",
+    "extracted_skills": [
+      "Docker",
+      "PostgreSQL",
+      "FastAPI",
+      "Flask",
+      "Python",
+      "SQL",
+      "REST"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Delhi"
+        ],
+        "display_name": "Delhi, India",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "RPA Developer",
+    "company": "Louis Dreyfus Company",
+    "description": "Job Description The RPA Developer will be part of the Intelligent Automation center, responsible for designing, developing, and deploying scalable automation solutions using UiPath, Python, and Document AI technologies . The role combines RPA with advanced AI-driven automation to enable end-to-end intelligent business processes across global functions. The position requires strong technical expertise, solution thinking, and the ability to work closely with business stakeholders to deliver high-…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-05T04:18:34+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5911844178?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5911844178",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "RPA Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Acme Services Private Limited",
+    "description": "Job Description: Develop and maintain scalable backend applications using Python. Design and develop REST APIs and microservices. Write clean, efficient, reusable, and maintainable code. Work with databases such as PostgreSQL, MySQL, Oracle, or MongoDB. Develop and integrate applications with internal and external APIs. Troubleshoot, debug, and resolve application issues. Write unit tests and participate in code reviews. Work closely with frontend developers, QA, DevOps, and business teams. Opt…",
+    "location_city": "Richmond Town",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1700000.0,
+    "salary_max": 1800000.0,
+    "currency": "INR",
+    "posted_date": "2026-10-03T23:56:17+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5910504775?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5910504775",
+    "extracted_skills": [
+      "MongoDB",
+      "MySQL",
+      "Oracle",
+      "PostgreSQL",
+      "Python",
+      "Microservices",
+      "REST"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore",
+          "Richmond Town"
+        ],
+        "display_name": "Richmond Town, Bangalore",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior Python Developer Vice President",
+    "company": "Citigroup",
+    "description": "The Senior Python Developer Vice President is a senior level position responsible for establishing and implementing new or revised application systems and programs in coordination with the Technology team. The overall objective of this role is to lead applications systems analysis and programming activities. Responsibilities:  Partner with multiple management teams to ensure appropriate integration of functions to meet goals as well as identify and define necessary system enhancements to deploy…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-03T11:16:11+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5909546700?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5909546700",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "React JS Developer",
+    "company": "Infosys Limited",
+    "description": "Job Description: We are seeking a skilled React JS Developer with 2 3 years of hands on experience in building responsive and scalable web applications The ideal candidate should have strong expertise in React js JavaScript and front end development best practices along with the ability to collaborate effectively with cross functional teams Key Responsibilities: Develop and maintain user facing features using React js Build reusable components and front end libraries for future use Translate UI…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-03T08:11:03+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5909285962?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5909285962",
+    "extracted_skills": [
+      "React",
+      "JavaScript"
+    ],
+    "extracted_role": "React JS Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Software Engineering Lead - Python - AI",
+    "company": "UnitedHealth Group",
+    "description": "Requisition number: 2386608 Job category: Technology Optum is a global organization that delivers care, aided by technology to help millions of people live healthier lives. The work you do with our team will directly improve health outcomes by connecting people with the care, pharmacy benefits, data and resources they need to feel their best. Here, you will find a culture guided by inclusion, talented peers, comprehensive benefits and career development opportunities. Come make an impact on the…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-02T11:18:23+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5907470578?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5907470578",
+    "extracted_skills": [],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Data Engineer (SQL Python  DBT  Airflow  Snowflake )",
+    "company": "VDart Software Services Pvt. Ltd.",
+    "description": "Job Description: Data Engineer (SQL Python  DBT  Airflow  Snowflake ) 5 Years Role: Data Engineer Experience: 5 Years Location: Bengaluru/Gurgaon Job Summary We are looking for an experienced Data Engineer with strong expertise in SQL , DBT, Apache Airflow, and Python to design, develop, and maintain scalable data pipelines and transformation frameworks. The ideal candidate will have hands-on experience in building modern data platforms, workflow orchestration, ETL/ELT development, and cloud-ba…",
+    "location_city": "Mini Sectt.",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-02T01:49:13+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5906273739?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5906273739",
+    "extracted_skills": [
+      "Apache",
+      "Snowflake",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Data Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Mini Sectt., Gurgaon",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Mini Sectt."
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python / ETL Developer",
+    "company": "Topcoder",
+    "description": "Key Skills Python (main skill) API development Kubernetes (K8s) Docker FastAPI directory structure Vulnerability fixes (basic understanding of SonarQube, etc.) Database Requirements (Must Have) 6–8 years of experience in software development, with a strong emphasis on ETL processes using Python . Proficiency in Python, Pandas, NumPy, SQLAlchemy , with expertise in REST/GraphQL APIs including query construction, pagination and mutations. Strong skills in SQL development, ETL pipelines, batch orc…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-01T21:29:29+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5905918844?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5905918844",
+    "extracted_skills": [
+      "Docker",
+      "Kubernetes",
+      "FastAPI",
+      "GraphQL",
+      "NumPy",
+      "Pandas",
+      "Python",
+      "SQL",
+      "REST"
+    ],
+    "extracted_role": "Data Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Infosys",
+    "description": "Primary skills: Python > Django, Flask, Pandas, Numpy, Pyramid Additional Information: Knowledge of design principles and fundamentals of architecture Basic understanding of project domain Writing scalable code using Python programming language. Ability to translate functional / nonfunctional requirements to systems requirements Ability to design and code complex programs Ability to write test cases and scenarios based on the specifications Good understanding of agile methodologies Awareness of…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-01T16:27:18+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5905433984?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5905433984",
+    "extracted_skills": [
+      "Django",
+      "Flask",
+      "NumPy",
+      "Pandas",
+      "Python",
+      "Agile"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "ascendion",
+    "description": "About Ascendion Ascendion is a leader in AI-Native platform driven software engineering company that underwrites outcomes, helping businesses innovate faster, smarter, and with greater impact. We partner with Global 2000 clients across North America, UK, Europe, and APAC to solve complex challenges in data, experience design, software product engineering, and workforce transformation. Powered by expert engineers, thousands of AI agents, and our Engineering to the Power of AI™ (EngineeringAI) me…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-01T08:38:31+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5904539561?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5904539561",
+    "extracted_skills": [],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Pune, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Manager Technology | Python",
+    "company": "Publicis Sapient",
+    "description": "Job Description Publicis Sapient is looking for Python Developers to join our team of bright thinkers and enablers. You will use your problem-solving skills, craft, and creativity to design and develop infrastructure interfaces for complex business applications. You will build and orchestrate agentic, GenAI-powered workflows that transform how our clients operate – from data ingestion and enrichment to intelligent, LLM-driven automation. We are on a mission to transform the world, and you will …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-10-01T08:38:28+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5904539350?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5904539350",
+    "extracted_skills": [
+      "LLM",
+      "Python"
+    ],
+    "extracted_role": "Manager Technology | Python",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Infosys Limited",
+    "description": "Key Responsibilities: Key Responsibilities Develop and maintain web applications using Python and Django Build and integrate Generative AI solutions into business applications Develop responsive user interfaces using React js or Angular Design and consume REST APIs and backend services Work with databases and optimize application performance Integrate AI models and third party services into applications Debug troubleshoot and resolve application issues Participate in code reviews testing and de…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-30T08:06:28+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5903325851?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5903325851",
+    "extracted_skills": [
+      "Generative AI",
+      "Angular",
+      "Django",
+      "React",
+      "Python",
+      "REST"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Streamlit Python Developer",
+    "company": "Blumetra",
+    "description": "Job Summary We are looking for an experienced Streamlit Python Developer with 5–7 years of hands-on experience in Python application development and building interactive web applications using Streamlit . The ideal candidate should have strong Python programming skills, experience developing data-driven applications and dashboards, and the ability to integrate APIs, databases, and AI/ML services into production-ready applications. Key Responsibilities Design and develop interactive web applicat…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1500000.0,
+    "salary_max": 2000000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-30T07:52:18+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5903295434?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5903295434",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_type": "permanent",
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana"
+      },
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Blumetra",
+    "description": "Job Summary We are looking for an experienced Python Developer with 5–7 years of hands-on experience in designing, developing, testing, and maintaining scalable applications. The ideal candidate should have strong expertise in Python, backend development, REST APIs, databases, and cloud technologies, with a focus on writing clean, maintainable, and high-quality code. Key Responsibilities Design, develop, test, and maintain scalable backend applications using Python. Develop and integrate RESTfu…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1500000.0,
+    "salary_max": 1800000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-30T07:52:18+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5903295413?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5903295413",
+    "extracted_skills": [
+      "Python",
+      "REST"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "contract_type": "permanent",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Idea Nuggets",
+    "description": "Job Role The Python Developer role involves developing high-performance, reusable components such as core application logic, data processing, integration, APIs, and other backend functionalities to empower our clients' innovative applications. This isn't your typical Python Developer position where you merely write code; we're seeking individuals with a profound grasp of building intricate microservices in the cloud, harnessing the capabilities of Python and its ecosystem of tools and libraries…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-29T16:18:23+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5902729535?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5902729535",
+    "extracted_skills": [
+      "Python",
+      "Microservices"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Engineering Productivity Lead (DevOps Lead / Platform Engineer)",
+    "company": "Arting Digital Private Limited",
+    "description": "Position - Engineering Productivity Lead (DevOps Lead / Platform Engineer) Exp - 6 Years Notice Period - Immediate Joiner- 30 days Location - Noida, Sector 63 Skills - Java , Spring Boot/Spring MVC , Tomcat, Legacy Java, Git, CI/CD, API Testing, WireMock/MockServer/TestContainers , OpenAPI, SQL, Linux, Bash/Python, Developer Tools/DevEx About the Role: We are looking for an Engineering Productivity Lead to improve developer efficiency and software delivery across Java/Tomcat/JSP/Servlet applica…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-29T09:28:23+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5902511237?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5902511237",
+    "extracted_skills": [
+      "CI/CD",
+      "Linux",
+      "Spring",
+      "Spring Boot",
+      "Bash",
+      "Java",
+      "Python",
+      "SQL",
+      "Git"
+    ],
+    "extracted_role": "Engineering Productivity Lead (DevOps Lead / Platform Engineer)",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad"
+      },
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Custom Software Engineer - Python (Programming Language)",
+    "company": "Trigent Software Private Limited",
+    "description": "As a Custom Software Engineer, a typical day involves creating tailored software solutions by designing, coding, and improving various components within systems or applications. The role requires for a Python Developer with strong experience in data engineering, SQL, and Amazon Redshift. The candidate will develop data pipelines, perform data transformations, and work with large datasets in an AWS environment. requires working with modern development frameworks and following agile methodologies…",
+    "location_city": "Mini Sectt.",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1000000.0,
+    "salary_max": 2000000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-28T23:54:24+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5901872695?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5901872695",
+    "extracted_skills": [
+      "AWS",
+      "Python",
+      "SQL",
+      "Agile"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Mini Sectt."
+        ],
+        "display_name": "Mini Sectt., Gurgaon"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Node Js  React Developer",
+    "company": "Acme Services Private Limited",
+    "description": "Job Description: Develop and maintain scalable web applications using Node.js and React. Build and integrate RESTful APIs and backend services using Node.js. Develop responsive and reusable UI components using React.js. Integrate frontend applications with backend APIs and third-party services. Design and manage database interactions, data models, and queries. Ensure application performance, scalability, security, and reliability. Troubleshoot, debug, and resolve application issues across front…",
+    "location_city": "Yerwada",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 2200000.0,
+    "salary_max": 2300000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-28T23:54:17+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5901872366?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5901872366",
+    "extracted_skills": [
+      "Node.js",
+      "React"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune",
+          "Yerwada"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Yerwada, Pune"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "SourcingXPress",
+    "description": "Company: Client of People Impact LinkedIn: Visit LinkedIn Business Type: Enterprise Company Type: Service Business Model: B2B Funding Stage: Private Equity Industry: Software Development Job Description About the Role We are seeking a skilled Python Development Backend Engineer with hands-on experience in Python, FastAPI, and containerized cloud-native environments. You will be responsible for building highly performant services, designing APIs, ensuring reliability, and collaborating across en…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-26T16:17:37+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5899549649?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5899549649",
+    "extracted_skills": [
+      "FastAPI",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Software Engineering Lead",
+    "company": "UnitedHealth Group",
+    "description": "Requisition number: 2377470 Job category: Technology Optum is a global organization that delivers care, aided by technology to help millions of people live healthier lives. The work you do with our team will directly improve health outcomes by connecting people with the care, pharmacy benefits, data and resources they need to feel their best. Here, you will find a culture guided by inclusion, talented peers, comprehensive benefits and career development opportunities. Come make an impact on the…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-26T11:16:26+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5899329550?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5899329550",
+    "extracted_skills": [],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Sr. Engineer I - AI Developer",
+    "company": "MKS Instruments",
+    "description": "A Day in Your Life at MKS: As an AI/ML Developer at MKS Instruments, you will partner with the IT Team at MKS to develop, deploy, and optimize AI and Machine Learning solutions using traditional ML techniques and advanced Generative AI models. In this role, you will report to the AI & Data Science Manager. Make an Impact By: Developing and deploying web applications and scalable serverless functions on Azure Cloud. Designing and implementing AI/ML solutions using Azure OpenAI Studio and Azure A…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-25T21:09:54+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5898474171?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5898474171",
+    "extracted_skills": [
+      "Generative AI",
+      "Machine Learning",
+      "Azure"
+    ],
+    "extracted_role": "Data Scientist",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "infomaticscorp",
+    "description": "Dear Candidate, Greetings from INFOMATICS CORP We are looking for an ambitious Python Developer who can join us Immediately or by 15- 30 Days. Responsibilities: Relevant Experience required 3 to 5 years. Strong proficiency in python programming language along with expertise in backend development framework such as Django or Flask . (DSA and Design patterns are mandatory). Hand on Experience in REST API development and database such as PostgreSQL. Good knowledge of versions control systems like …",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 100000.0,
+    "salary_max": 1200000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-25T16:15:38+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5898172998?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5898172998",
+    "extracted_skills": [
+      "PostgreSQL",
+      "Django",
+      "Flask",
+      "Python",
+      "REST",
+      "REST API"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "contract_time": "full_time",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Dev Ops Engineer",
+    "company": "Orange Business",
+    "description": "Join us at Orange Business!. We are a network and digital integrator that understands the entire value chain of the digital world, freeing our customers to focus on the strategic initiatives that shape their business. Every day, you will collaborate with a team dedicated to providing consistent, sustainable global solutions, no matter where our customers operate. With over 30,000 employees across Asia, the Americas, Africa, and Europe, we offer a dynamic environment to develop and perfect your …",
+    "location_city": "Dlf Qe",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-25T11:03:53+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5897939509?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5897939509",
+    "extracted_skills": [],
+    "extracted_role": "Dev Ops Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Dlf Qe"
+        ],
+        "display_name": "Dlf Qe, Gurgaon"
+      }
+    }
+  },
+  {
+    "title": "Healthcare Data Engineer - HEDIS & Quality (India)",
+    "company": "EXL",
+    "description": "Description Required Skills Minimum 3 years of Healthcare Data Engineering, Healthcare Analytics, Quality Measurement, or Healthcare Reporting experience Strong SQL development and data analysis skills Python development experience Experience with GCP, Big Query, or other cloud platforms Understanding of healthcare data including claims, membership, provider, and clinical data Experience with data validation, reconciliation, testing, and troubleshooting Strong analytical, problem-solving, and c…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-24T21:20:43+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5897060467?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5897060467",
+    "extracted_skills": [
+      "Data Analysis",
+      "GCP",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Data Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad"
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Wipro",
+    "description": "Job description: Job Description Role Purpose The purpose of this role is to design, test and maintain software programs for operating systems or applications which needs to be deployed at a client end and ensure its meet 100% quality assurance parameters ͏ Do 1. Instrumental in understanding the requirements and design of the product/ software Develop software solutions by studying information needs, studying systems flow, data usage and work processes Investigating problem areas followed by t…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-24T16:16:43+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5896657838?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5896657838",
+    "extracted_skills": [],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "contract_time": "full_time",
+      "contract_type": "contract",
+      "location": {
+        "display_name": "Hyderabad, Telangana",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Weekday AI",
+    "description": "This role is for one of Weekday’s clients Salary range: Rs 500000 - Rs 2500000 (ie INR 5 - 25 LPA) Min Experience: 5 years Location: Bengaluru JobType: full-time We are looking for an experienced Python Developer with 5–8 years of hands-on experience in designing, developing, and maintaining scalable backend applications and APIs. The ideal candidate should have strong expertise in Python, FastAPI, and Kubernetes , along with a solid understanding of modern backend engineering practices, micros…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-24T16:16:41+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5896657565?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5896657565",
+    "extracted_skills": [
+      "Kubernetes",
+      "FastAPI",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "python Developer",
+    "company": "Artech Infosystems Private Limited",
+    "description": "Hiring: Python Developer | Bangalore | Hybrid Artech is hiring experienced Python Developers for an exciting opportunity in Bangalore. Experience: 3–6 Years Location: Bangalore Work Mode: Hybrid CTC: Up to 10 LPA Preference: Bangalore local candidates Interested candidates can share their updated CV at: [HIDDEN TEXT] Contact: 8265998498 Required Skills Strong experience in Python Hands-on experience with Django and/or Flask Experience with Angular and/or React Good understanding of web applicat…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-24T07:45:52+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5896122768?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5896122768",
+    "extracted_skills": [
+      "Angular",
+      "Django",
+      "Flask",
+      "React",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior Associate - Level 1 (Python)",
+    "company": "Zigsaw",
+    "description": "Senior Associate - Level 1 (Python) Location : Delhi-NCR Job Description We are seeking a highly skilled and responsible Senior Associate – Python who can design, develop, and deliver scalable applications and complex systems. The ideal candidate should have hands-on experience in building backend and frontend systems, a proven ability to deliver high-performance solutions, and team leadership experience. This role demands strong engineering fundamentals, meticulous execution, structured workin…",
+    "location_city": "Delhi",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1080000.0,
+    "salary_max": 1200000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-23T07:13:57+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5894623145?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5894623145",
+    "extracted_skills": [
+      "Python",
+      "Leadership"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Delhi, India",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Delhi"
+        ]
+      },
+      "contract_type": "permanent",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Senior Manager Technology | Python",
+    "company": "Publicis Sapient",
+    "description": "Job Description Publicis Sapient is looking for Python Developers to join our team of bright thinkers and enablers. You will use your problem-solving skills, craft, and creativity to design and develop infrastructure interfaces for complex business applications. You will build and orchestrate agentic, GenAI-powered workflows that transform how our clients operate – from data ingestion and enrichment to intelligent, LLM-driven automation. We are on a mission to transform the world, and you will …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-22T07:45:40+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5893467135?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5893467135",
+    "extracted_skills": [
+      "LLM",
+      "Python"
+    ],
+    "extracted_role": "Senior Manager Technology | Python",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Principal IT Pillar Specialist",
+    "company": "Lutech Resources",
+    "description": "Description Job Overview: The AI Development Manager will lead the development and delivery of Enterprise-grade AI solutions across all functions as needed. This role combines people leadership, technical depth, delivery accountability, and stakeholder influence. The successful candidate will build and develop a high-performing global development team, translate business priorities into a scalable AI product roadmap, and ensure that AI applications, agents, knowledge solutions, and intelligent …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-20T21:35:06+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5891869596?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5891869596",
+    "extracted_skills": [
+      "Leadership"
+    ],
+    "extracted_role": "Principal IT Pillar Specialist",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      },
+      "salary_is_predicted": "0",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "IT Pillar Specialist",
+    "company": "Lutech Resources",
+    "description": "Description Job Overview: As a part of the Global Application Management and Support (GAMS) team, this individual will be involved in development and modernization of EDMS (iDocs) Platform technically. With this role we are looking to strengthen development and support team who will liaise with cross-functional teams, to ensure successful delivery of support services at McDermott. The successful candidate will possess a strong technical background and also has a good understanding of business p…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-19T21:54:08+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5890813006?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5890813006",
+    "extracted_skills": [],
+    "extracted_role": "IT Pillar Specialist",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Senior Principal IT Pillar Specialist",
+    "company": "Lutech Resources",
+    "description": "Description Job Overview: As a part of the Global Application Management and Support (GAMS) team, this individual will be responsible to manage the development and modernization of EDMS (iDocs) Platform technically. With this role we are looking to strengthen development and support team who will liaise with cross-functional teams, to ensure successful delivery of support services at McDermott. The successful candidate will possess a strong technical background and also has a good understanding…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-19T21:39:50+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5890791333?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5890791333",
+    "extracted_skills": [],
+    "extracted_role": "Senior Principal IT Pillar Specialist",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "contract_type": "permanent",
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Tussle Digital",
+    "description": "Company Description Tussle Digital, based in Sydney, Australia, is a premier digital marketing agency specializing in Web Design, Online Marketing, and E-Commerce Solutions. Our services encompass everything from content creation to eCommerce store management on platforms like Shopify, Magento, and WooCommerce. We assist clients with Google Ads, Bing Ads, and Social Media Marketing across various platforms. Our core values of transparency, mutual trust, and integrity are at the heart of everyth…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 480000.0,
+    "salary_max": 500000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-18T21:56:20+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889569548?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889569548",
+    "extracted_skills": [],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Backend Developer",
+    "company": "Productfusion",
+    "description": "Job Title: Python Backend Developer Location: Remote Company: [Product Fusion]( www.productfusion.co )  About Us: At Product Fusion, we specialize in building AI, SaaS , and Web applications for established brands and funded startups. As a product design and engineering studio, we've honed our expertise through the creation of 5 internal startups and 10 client apps. Our experience spans a diverse range of industries, from funded fintech startups to enterprise energy companies, enabling us to de…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": true,
+    "salary_min": 400000.0,
+    "salary_max": 600000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-18T21:56:01+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889568730?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889568730",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "WordPress and React Developer",
+    "company": "PrettyWP",
+    "description": "At PrettyWP, we've spent the last few years supporting WordPress sites for businesses and agencies across the world. We’re building something bigger, a powerful, AI-driven platform that will change how WordPress sites are managed. This isn’t about building client websites. This is about building a product , a tool that makes WordPress management faster, smarter, and simpler. We’re looking for a developer who loves WordPress and React and wants to be part of a small but ambitious team that is cr…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T21:51:19+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889557876?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889557876",
+    "extracted_skills": [
+      "React"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Dev - New",
+    "company": "Tussle Digital",
+    "description": "Company Description Tussle Digital, based in Sydney, Australia, is a leading digital marketing agency specializing in web development, online marketing, digital marketing, and e-commerce solutions. Our expert team delivers comprehensive digital strategies spanning web design, content creation, graphics, Google Ads, Bing Ads, and social media marketing on platforms like Facebook, Instagram, and TikTok. With strong expertise in managing eCommerce platforms such as Shopify, Magento, and WooCommerc…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T21:48:36+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889552379?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889552379",
+    "extracted_skills": [],
+    "extracted_role": "Python Dev - New",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "python developer",
+    "company": "Strategic Minds Business Services",
+    "description": "Company Overview Strategic Minds Business Services is a dynamic and forward-thinking company dedicated to providing top-notch business solutions across the globe. We pride ourselves on fostering a collaborative and innovative work environment that empowers our team to excel and deliver exceptional results for our clients.  Job Title Python Developer  Job Location Bengaluru, India  Job Summary We are seeking a talented and enthusiastic Python Developer to join our team in Bengaluru. This role i…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T21:32:46+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889514929?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889514929",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka"
+      }
+    }
+  },
+  {
+    "title": "Sr Python Developer",
+    "company": "Dailoqa",
+    "description": "Experience: 4–8 years Tech Stack: Python, FastAPI, SQL/NoSQL, Docker, CI/CD Required Skills & Experience 4–8 years of professional backend development experience in Python . 2 years of production experience with FastAPI . Strong understanding of REST API design, async I/O, and Pydantic. Experience with relational and/or NoSQL databases. Familiarity with containerization (Docker) and deployment best practices. Knowledge of Git, CI/CD tools, and testing frameworks like Pytest. Good problem-solvin…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T19:47:35+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889346215?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889346215",
+    "extracted_skills": [
+      "CI/CD",
+      "Docker",
+      "FastAPI",
+      "Python",
+      "SQL",
+      "Git",
+      "REST",
+      "REST API"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "location": {
+        "display_name": "Noida, Ghaziabad",
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Agentic AI Engineer Intern",
+    "company": "Xiarch Bharat Pvt Ltd",
+    "description": "Agentic AI Engineer Intern About Xiarch Bharat Infrastructure & Security Operations Xiarch Bharat is a CERT-In empanelled cybersecurity services company with over 20 years of experience. We specialize in 24×7 SOC monitoring, Vulnerability Assessment & Penetration Testing (VAPT), GRC, DPDP compliance, ISO audits, and Zero Trust networking solutions (pfSense/FortiGate). We serve 4000 clients across India and are rapidly scaling our infrastructure and product capabilities with AI-powered security …",
+    "location_city": "Dlf Ph",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 15000.0,
+    "salary_max": 15000.0,
+    "currency": "INR",
+    "posted_date": "2026-09-18T19:47:27+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5889345196?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5889345196",
+    "extracted_skills": [],
+    "extracted_role": "Machine Learning Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Dlf Ph"
+        ],
+        "display_name": "Dlf Ph, Gurgaon"
+      },
+      "contract_type": "permanent",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior React Developer",
+    "company": "ascendion",
+    "description": "About the Role', Job Title: Frontend Developer Responsibilities Develop, test, and deploy highly responsive and scalable user interfaces using JavaScript frameworks, primarily Next.js and React. Collaborate closely with product managers, and backend developers to translate design mockups and user stories into functional and engaging web applications. Write clean, maintainable, and well-documented code following best practices and coding standards. Optimize application performance, responsivenes…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T07:44:01+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5888551513?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5888551513",
+    "extracted_skills": [
+      "Next.js",
+      "React",
+      "JavaScript"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu"
+      }
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "ascendion",
+    "description": "About The Role Job Description: UI Developer (6 Years with Next.js 14, React 18, TypeScript, AWS ECS, Docker, PostgreSQL, Tailwind CSS, CI/CD, Terraform, REST / GraphQL, AWS Certified) Key Responsibilities Frontend Architecture & Development Architect and develop modern web applications using Next.js 14 (App Router, Server Components, Server Actions, Streaming SSR, Parallel Routes) Design reusable, accessible component libraries using React 18, TypeScript, and Tailwind CSS / Radix UI Implement …",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-18T07:44:01+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5888551542?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5888551542",
+    "extracted_skills": [
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "Terraform",
+      "PostgreSQL",
+      "GraphQL",
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Tailwind CSS",
+      "CSS",
+      "TypeScript",
+      "REST"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "React JS Developer",
+    "company": "Vrinda International",
+    "description": "React JS Developer Location: Hyderabad Experience: 6–9 Years Budget: Up to ₹18 LPA ROLE OVERVIEW We are looking for a skilled React JS Developer to build scalable web applications, lead Micro Frontend architecture, optimize performance, and manage modern frontend development practices. KEY SKILLS • ReactJS, JavaScript (ES6), TypeScript, HTML5 & CSS3 • React Hooks, Redux, Context API & state management • Micro Frontend (MFE) architecture • Webpack Module Federation • Managing 100 Micro Frontends…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-17T09:34:08+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5887125831?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5887125831",
+    "extracted_skills": [
+      "React",
+      "Redux",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Hyderabad, Telangana"
+      },
+      "contract_type": "contract",
+      "contract_time": "full_time",
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Artech Infosystems Private Limited",
+    "description": "Experience: 5–8 Years Location: Bengaluru/Pune/Hyderabad/Chennai Role Overview We are looking for an experienced Python Developer with strong expertise in Python programming and SQL to design, develop, and maintain scalable applications and data-driven solutions. The ideal candidate should have strong backend development experience, good database knowledge, and the ability to work independently on complex technical requirements. Key Responsibilities Design, develop, test, and maintain applicati…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-13T07:42:13+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5882108549?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5882108549",
+    "extracted_skills": [
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Pune, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior React Developer",
+    "company": "Aditi Tech Consulting Private Limited",
+    "description": "Summary: We are seeking an experienced React Developer with 5-7 years of professional experience to join our dynamic development team. The ideal candidate will have a strong foundation in modern React development, excellent problem-solving skills, and the ability to work collaboratively in an agile environment. Responsibilities: Develop and maintain high-quality, scalable web applications using React.js. Collaborate with cross-functional teams including designers, product managers, and backend …",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-12T07:41:43+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5880471178?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5880471178",
+    "extracted_skills": [
+      "React",
+      "Agile"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Development Manager",
+    "company": "GlobalData Publications Inc",
+    "description": "Description We are seeking a Python Development Manager to lead our development team in delivering innovative software solutions. The ideal candidate will have extensive experience in Python development, strong leadership skills, and the ability to manage multiple projects simultaneously. Responsibilities Lead and manage a team of Python developers to deliver high-quality software solutions. Design, develop, and maintain Python applications and services. Ensure adherence to coding standards and…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-11T07:37:58+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5879139701?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5879139701",
+    "extracted_skills": [
+      "Python",
+      "Leadership"
+    ],
+    "extracted_role": "Python Development Manager",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "AWS Glue Python Developer",
+    "company": "ProArch",
+    "description": "We are seeking an experienced AWS Glue Python Developer to design, develop, and support scalable cloud-based inbound and outbound file based data integration and processing solutions. The ideal candidate will have strong expertise in Python, AWS Glue, PySpark, and serverless AWS services. The candidate will work with business and technical teams to develop reliable data processing workflows using services such as Amazon S3, EventBridge, Lambda, SNS, SQS, CloudWatch, IAM, and AWS Step Functions …",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T16:12:46+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5878284552?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5878284552",
+    "extracted_skills": [
+      "AWS",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Junior Software Developer - Python",
+    "company": "WSP USA",
+    "description": "WSP is seeking an innovative and motivated professional with experience in Python development, cloud technologies, and platforms such as Microsoft Azure and GitHub. In this role, you will be responsible for deploying, maintaining, and supporting Python-based solutions that contribute to engineering and mining projects. The successful candidate will play a key role in developing and supporting digital solutions that enhance project delivery, operational performance, and technical excellence acro…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T11:11:05+00:00",
+    "category": "Engineering Jobs",
+    "source_url": "https://www.adzuna.in/details/5878060873?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5878060873",
+    "extracted_skills": [
+      "Azure",
+      "Python",
+      "GitHub"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Noida, Ghaziabad",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "SAS",
+    "description": "We’re a leader in data and AI. Through our software and services, we inspire customers around the world to transform data into intelligence - and questions into answers. If you're looking for a dynamic, fulfilling career with flexibility and a world-class employee experience, you'll find it here. We're recognized around the world for our inclusive, meaningful culture and innovative technologies by organizations like Fast Company, Forbes, Newsweek and more. Experience: 2-4 Years Job Description:…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T10:59:12+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5878038757?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5878038757",
+    "extracted_skills": [],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Trianz",
+    "description": "Role & responsibilities Job Description: About the Role We're looking for a skilled Senior Python Developer including Fast API framework to lead the development of scalable, high-performance applications. You'll play a key role in system architecture, mentor team members, and collaborate across teams to deliver quality solutions. Responsibilities Design, build, and maintain robust Python applications. Architect scalable backend systems and APIs. Lead code reviews and mentor junior developers. C…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T07:38:54+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5877845419?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5877845419",
+    "extracted_skills": [
+      "C",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Trianz",
+    "description": "Role & responsibilities Job Description: About the Role We're looking for a skilled Senior Python Developer including Fast API framework to lead the development of scalable, high-performance applications. You'll play a key role in system architecture, mentor team members, and collaborate across teams to deliver quality solutions. Responsibilities Design, build, and maintain robust Python applications. Architect scalable backend systems and APIs. Lead code reviews and mentor junior developers. C…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T07:38:54+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5877845417?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5877845417",
+    "extracted_skills": [
+      "C",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Cybage Software Private Limited",
+    "description": "Develop, test and maintain high-quality software using Python programming language. Participate in the entire software development lifecycle, building, testing and delivering high-quality solutions. Collaborate with cross-functional teams to identify and solve complex problems. Write clean and reusable code that can be easily maintained and scaled. Technical and Professional Requirements: Sound knowledge of the Python programming framework & libraries Familiarity with database technologies such…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-10T07:36:43+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5877842297?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5877842297",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "R&D Manager",
+    "company": "American Express Global Business Travel",
+    "description": "What You'll Do on a Typical Day Manage a team of developers Ensure every individual contributes, learns and grows in their role, knowledge and skills Ensure the team works efficiently in an enjoyable environment Evaluate and optimize the time and resources needed to carry out the various stages of the projects in order to establish an overall development plan Negotiates resources (human, technical, financial, deadlines) according to the progress of projects and adjusts resources if necessary Me…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-09T07:40:09+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5876482816?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5876482816",
+    "extracted_skills": [],
+    "extracted_role": "R&D Manager",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Senior Software Development Engineer",
+    "company": "American Express Global Business Travel",
+    "description": "What You ll Do on a Typical Day Work in a SCRUM team Design, develop and test new applications and features Participate in the evolution and maintenance of existing systems Contribute in the deployment of features Monitor the platform Propose new ideas to enhance the product either functionally or technically What We re Looking For 8-10yrs of Operational knowledge of C# or python development , as well as in Docker Experience with PostgreSQL or Oracle Knowledge of AWS S3, and optionally AWS Kine…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-09T07:40:09+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5876482814?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5876482814",
+    "extracted_skills": [
+      "AWS",
+      "Docker",
+      "Oracle",
+      "PostgreSQL",
+      "C",
+      "C#",
+      "Python",
+      "Scrum"
+    ],
+    "extracted_role": "Senior Software Development Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "TEA Developer",
+    "company": "American Express Global Business Travel",
+    "description": "What You ll Do on a Typical Day Understand the needs of the client and Implement functional requirements accordingly. Help in designing the software. Clean architecture knowledge is mandatory. Build back-end features in Python that are efficient. Integrate front-end and back-end components into the application. Supervise the testing of software and ensure that all the bugs are fixed. Develop technical reports for the software. Keep suggesting improvements and ways to enhance the functioning of …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-09T07:40:09+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5876482821?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5876482821",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "React/Nodejs Developer",
+    "company": "Diverse Lynx India Private Limited",
+    "description": "Required Skills & Qualifications 7 years of hands-on experience in full-stack development. Strong expertise in React.js, JavaScript (ES6), HTML5, CSS3, material UI and TypeScript. Strong experience with Node.js and frameworks such as Express.js. Strong experience on nx monorepo, and webpack. Solid understanding of RESTful APIs, microservices, and API security. Experience with Git and branching strategies. Strong understanding of CI/CD pipelines and modern software development practices. Experie…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-05T07:40:24+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5871280550?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5871280550",
+    "extracted_skills": [
+      "CI/CD",
+      "Express",
+      "Express.js",
+      "Node.js",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "Git",
+      "Microservices"
+    ],
+    "extracted_role": "Full Stack Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Calsoft",
+    "description": "Description We are looking for a skilled Python Developer to join our dynamic team in India. The ideal candidate will have a strong background in Python programming and will be responsible for developing and maintaining high-quality software solutions. Responsibilities Develop and maintain robust backend services using Python and related frameworks. Write reusable, testable, and efficient code. Collaborate with front-end developers to integrate user-facing elements with server-side logic. Parti…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-05T07:37:05+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5871275307?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5871275307",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Senior Data Engineer (AWS)",
+    "company": "Srijan",
+    "description": "Key Responsibilities : * *Data Modelling:Design and implement efficient data models, ensuring data accuracy and optimal performance. *ETL Development:Develop, maintain, and optimize ETL processes to extract, transform, and load data from various sources into our data warehouse. *SQL Expertise: Write complex SQL queries to extract, manipulate, and analyze data as needed. *Python Development: Develop and maintain Python scripts and applications to support data processing and automation. *AWS Expe…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-05T07:36:17+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5871273575?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5871273575",
+    "extracted_skills": [
+      "AWS",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Data Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Centific",
+    "description": "Centific is a frontier AI data foundry that curates diverse, high-quality data, using our purpose-built technology platforms to empower the Magnificent Seven and our enterprise clients with safe, scalable AI deployment. Our team includes more than 150 PhDs and data scientists, along with more than 4,000 AI practitioners and engineers. We harness the power of an integrated solution ecosystem—comprising industry-leading partnerships and 1.8 million vertical domain experts in more than 230 markets…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-05T07:35:28+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5871271704?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5871271704",
+    "extracted_skills": [],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Hyderabad, Telangana",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "GCP Devops Engineer",
+    "company": "Xebia IT Architects",
+    "description": "Roles and Responsibilities: Design, develop, and maintain scalable cloud infrastructure on Google Cloud Platform (GCP) using Kubernetes, Terraform, and ArgoCD. Collaborate with cross-functional teams to identify process improvements and implement changes to increase efficiency. Develop Python scripts to automate tasks and workflows using Ansible or similar tools. Troubleshoot and resolve issues related to containerized applications deployed on Kubernetes clusters. Skills: Devops, Terraform, Gcp…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-04T07:40:07+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5869826139?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5869826139",
+    "extracted_skills": [
+      "Ansible",
+      "GCP",
+      "Google Cloud",
+      "Kubernetes",
+      "Terraform",
+      "Python"
+    ],
+    "extracted_role": "DevOps Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "Tudip Technologies",
+    "description": "We are looking for a great React.js developer whose primary focus will be on developing user interface components and implementing them following well-known React.js workflows. As a part of an agile team environment, you are expected to independently work on end-to-end project delivery which includes Developing new user-facing features using React.js Design, build and maintain efficient, reusable, and reliable React.js code Writing clean, maintainable, and efficient code Help maintain code qual…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-04T07:36:42+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5869817144?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5869817144",
+    "extracted_skills": [
+      "React",
+      "Agile"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu"
+      }
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "Tudip Technologies",
+    "description": "We are looking for a great React.js developer whose primary focus will be on developing user interface components and implementing them following well-known React.js workflows. As a part of an agile team environment, you are expected to independently work on end-to-end project delivery which includes Developing new user-facing features using React.js Design, build and maintain efficient, reusable, and reliable React.js code Writing clean, maintainable, and efficient code Help maintain code qual…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-04T07:36:42+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5869817142?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5869817142",
+    "extracted_skills": [
+      "React",
+      "Agile"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ]
+      }
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "Tudip Technologies",
+    "description": "We are looking for a great React.js developer whose primary focus will be on developing user interface components and implementing them following well-known React.js workflows. As a part of an agile team environment, you are expected to independently work on end-to-end project delivery which includes Developing new user-facing features using React.js Design, build and maintain efficient, reusable, and reliable React.js code Writing clean, maintainable, and efficient code Help maintain code qual…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-04T07:36:42+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5869817152?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5869817152",
+    "extracted_skills": [
+      "React",
+      "Agile"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Software Engineer",
+    "company": "Stellaspire",
+    "description": "Python Software Engineer . Location : Chennai or Gurugram Working Model : Hybrid – 3 days per week in the office Must-have skills: Strong Python development experience Strong experience designing and developing Microservices solutions using Python Hands-on experience building and integrating REST APIs / API integrations using Python Experience deploying and running applications on AWS Good to have: LangGraph experience – candidates with this skill will be given strong preference Knowledge/exper…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-03T21:33:00+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5869224560?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5869224560",
+    "extracted_skills": [
+      "LangGraph",
+      "AWS",
+      "Python",
+      "Microservices",
+      "REST"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Analyst, Product Operations, Transportation",
+    "company": "NPS Prism",
+    "description": "NPS Prism Title: Analyst, Product Operations (Tableau, Databricks, Python or Pyspark and SQL) Reports to: Team Manager (in NPS Prism India Hub) Company Profile: NPS Prism is a market-leading, cloud-based SaaS business owned by Bain & Company. NPS Prism provides its customers with actionable insights and analysis that guide the creation of game-changing customer experiences. Based on rock-solid sampling, research, and analytic methodology, it lets customers see how they compare to their competit…",
+    "location_city": "Dlf Qe",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-09-01T00:39:56+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5863110087?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5863110087",
+    "extracted_skills": [
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Analyst, Product Operations, Transportation",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Dlf Qe"
+        ],
+        "display_name": "Dlf Qe, Gurgaon",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python developer",
+    "company": "Genzeon Corporation",
+    "description": "We are seeking a skilled and motivated Python Developer to join our dynamic development team. As a Python Developer, you will be responsible for designing and implementing software solutions, collaborating with cross-functional teams, and ensuring the performance and responsiveness of applications. The ideal candidate will have a strong foundation in Python programming, a passion for clean and efficient code, and the ability to work in a fast-paced, collaborative environment. Must-Have Qualitie…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-30T07:40:27+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5861794528?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5861794528",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Hyderabad, Telangana"
+      }
+    }
+  },
+  {
+    "title": "Python Developer Lead",
+    "company": "Happiest Minds Technologies",
+    "description": "Key Deliverables Develop scalable backend solutions using Python and Django Design and manage PostgreSQL databases for high performance Implement AWS Lambda functions and EC2 instances Collaborate with cross-functional teams to deliver cloud-based applications Role Responsibilities Write clean, efficient Python code Optimize database queries and schema design Configure and manage AWS infrastructure Ensure timely delivery of high-quality software features Skills: Aws Ec2, Aws Lambda, Django, Pos…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-30T07:40:00+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5861793835?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5861793835",
+    "extracted_skills": [
+      "AWS",
+      "PostgreSQL",
+      "Django",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad"
+      }
+    }
+  },
+  {
+    "title": "Senior JavaScript React Developer",
+    "company": "Ciklum",
+    "description": "About the Role As a Senior JavaScript React Developer , become a part of a cross-functional development team engineering experiences for tomorrow. Responsibilities Be Proactive in Communication : Maintain clear and proactive communication with both team members and clients. Delivery : Create and maintain modern solutions according to unit standards and project requirements. Code Quality : Follow and improve code quality standards to ensure the reliability and maintainability of the codebase. An…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-29T07:41:11+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5860540458?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5860540458",
+    "extracted_skills": [
+      "React",
+      "JavaScript",
+      "Communication"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior JavaScript (React) Developer",
+    "company": "Ciklum",
+    "description": "About the role: As a Senior JavaScript (React) Developer, become a part of a cross-functional development team engineering experiences of tomorrow. Responsibilities Be proactive in communication with team members and client Delivery. Create and maintain modern solutions according to unit standards Code Quality. Follow and improve code quality standards Analyze and Estimate. Perform technical assessment of business requirements to ensure the possibility of their implementation within a reasonabl…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-29T07:41:10+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5860540400?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5860540400",
+    "extracted_skills": [
+      "React",
+      "JavaScript",
+      "Communication"
+    ],
+    "extracted_role": "Senior JavaScript (React) Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu"
+      }
+    }
+  },
+  {
+    "title": "Python Lead",
+    "company": "Binary Semantics Limited",
+    "description": "We are looking for a highly skilled Python Tech Lead to join our dynamic team. The ideal candidate will have 7-8 years of experience in software development and expertise in Flask, FastAPI, Django, Docker, MySQL, PostgreSQL, MongoDB, Redis, Kafka, Kubernetes, AWS, GCP, Linux, VCS, and CI/CD pipelines . The role requires strong leadership capabilities to drive the technical roadmap, mentor junior developers, and ensure best practices in software development. Experience with AI/ML for at least 1 …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-29T07:39:52+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5860533622?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5860533622",
+    "extracted_skills": [
+      "AWS",
+      "CI/CD",
+      "Docker",
+      "GCP",
+      "Kafka",
+      "Kubernetes",
+      "Linux",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "Django",
+      "FastAPI",
+      "Flask",
+      "Python",
+      "Leadership"
+    ],
+    "extracted_role": "Python Lead",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Aritha",
+    "description": "We are looking for a skilled and enthusiastic Python Developer to join our dynamic development team. As a Python Developer, you will work on developing, testing, and maintaining high-quality, efficient, and scalable software solutions. You will collaborate with other developers, product managers, and stakeholders to build and enhance applications, systems, and services. The ideal candidate will have a strong understanding of Python programming, software development principles, and the ability t…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-28T07:37:59+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5859123913?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5859123913",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Software Developer",
+    "company": "Toppan Merrill",
+    "description": "Description We are seeking a skilled Software Developer to join our dynamic team in India. The ideal candidate will have a strong background in software development, capable of building high-quality, scalable applications. Responsibilities Develop, test, and maintain software applications Collaborate with cross-functional teams to define and design new features Troubleshoot, debug, and upgrade existing software Write clean, scalable code using .NET programming languages Review and maintain docu…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-28T07:37:20+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5859121486?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5859121486",
+    "extracted_skills": [
+      ".NET"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "AWS Developers  Java 4",
+    "company": "BcForward India Technologies Private Limited",
+    "description": "Practitioner should be able to develop the applications utilizing AWS and Java. AWS Developers  Java (Pref) (or Python )  AWS CDK (Pref) Detailed description on AWS skillset in the resume. We don't need AWS Infra If we don't have AWS CDK pool availability, we can look for S3 or Lambda. Min 1-2 yrs in AWS and overall 4 yrs of exp. Share the profiles in a correct format. Skills: Java Experience: 5.00-10.00 Years",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-28T07:36:13+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5859118135?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5859118135",
+    "extracted_skills": [
+      "AWS",
+      "Java",
+      "Python"
+    ],
+    "extracted_role": "AWS Developers  Java 4",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer with SQL",
+    "company": "Evalueserve.com Private Limited",
+    "description": "Description We are seeking a skilled Python Developer with strong SQL skills to join our dynamic team in India. The ideal candidate will have 3-8 years of experience in software development, a solid understanding of databases, and a passion for building scalable applications. You will work closely with various teams to deliver innovative solutions that meet our clients' needs. Responsibilities Develop and maintain high-quality software applications using Python and SQL. Collaborate with cross-f…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-28T07:35:55+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5859117793?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5859117793",
+    "extracted_skills": [
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Senior Software Engineer - Python Development",
+    "company": "Thryve Digital",
+    "description": "Job Title: Python Developer – Senior Software Engineer Role Summary: This role demands experienced Senior Python Software Engineer to design, develop, and maintain backend applications within a fast-paced, agile environment. Responsibilities: Building efficient server-side applications in Python (Flask, Django, etc.) Help design and implement functional requirements Peer code review and coaching junior team members Build efficient back-end features in Python Responsible for loading data into da…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-27T07:40:35+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5857745692?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5857745692",
+    "extracted_skills": [
+      "Django",
+      "Flask",
+      "Python",
+      "Agile"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      }
+    }
+  },
+  {
+    "title": "React Native Developer",
+    "company": "Infosys Limited",
+    "description": "Job Description: About the job Build delightful high performance mobile experiences that users love In this role you ll craft cross platform applications using React Native collaborating closely with product managers designers backend engineers and QA to turn ideas into polished features You ll help shape technical decisions improve app stability and performance and contribute to a culture of clean code and continuous learning With an opportunity to explore AI enabled experiences you ll also ex…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-26T07:38:11+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5856197936?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5856197936",
+    "extracted_skills": [
+      "React",
+      "React Native",
+      "Clean Code"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Hyderabad, Telangana",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ]
+      }
+    }
+  },
+  {
+    "title": ".Net React Developer",
+    "company": "Infosys Limited",
+    "description": "Key Responsibilities: A day in the life of an Infoscion As part of the Infosys delivery team your primary role would be to ensure effective Design Development Validation and Support activities to assure that our clients are satisfied with the high levels of service in the technology domain You will gather the requirements and specifications to understand the client requirements in a detailed manner and translate the same into system requirements You will play a key role in the overall estimatio…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-26T07:38:10+00:00",
+    "category": "Trade & Construction Jobs",
+    "source_url": "https://www.adzuna.in/details/5856197834?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5856197834",
+    "extracted_skills": [],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "React Native Developer",
+    "company": "Infosys Limited",
+    "description": "Job Description: Build high quality mobile experiences that users rely on every day In this role you will design develop and maintain scalable cross platform applications using React Native collaborating closely with product design and backend teams to deliver polished features with strong performance and reliability You ll contribute to technical decisions improve engineering practices and help shape a codebase that values clean architecture maintainability and thoughtful user experience If yo…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-26T07:38:07+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5856197384?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5856197384",
+    "extracted_skills": [
+      "React",
+      "React Native"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Pune, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Infosys Limited",
+    "description": "Job Description: We are looking for a Python developer who will be able to do integration testing and unit testing Responsible for building high performing responsive web applications An ideal candidate should have good debugging skills Key Responsibilities: A day in the life of an Infoscion As part of the Infosys delivery team your primary role would be to ensure Development Validation and Support activities to assure that our clients are satisfied with the high levels of service in the techno…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-26T07:38:06+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5856197354?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5856197354",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Apex 2000",
+    "description": "We are seeking a skilled and enthusiastic Python Developer to join our dynamic team. You will be responsible for coordinating with development teams to determine application requirements, writing scalable code, testing and debugging applications, and developing robust back-end components. This role involves integrating user-facing elements, assessing client feature requests, and integrating data storage solutions while also improving existing databases and monitoring online traffic. Roles & Res…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-25T07:43:28+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5854880455?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5854880455",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Apex 2000",
+    "description": "We are seeking a skilled and enthusiastic Python Developer to join our dynamic team. You will be responsible for coordinating with development teams to determine application requirements, writing scalable code, testing and debugging applications, and developing robust back-end components. This role involves integrating user-facing elements, assessing client feature requests, and integrating data storage solutions while also improving existing databases and monitoring online traffic. Roles & Res…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-25T07:43:27+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5854880421?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5854880421",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra"
+      }
+    }
+  },
+  {
+    "title": "React Native developer",
+    "company": "Purview India Consulting And Services Llp",
+    "description": "We are seeking an experienced React Native Developer to join our team and contribute to the design, development, testing, and implementation of web-based and mobile applications. The ideal candidate should have a delivery-oriented approach and the ability to manage releases and support existing systems. Key Responsibilities: Develop and maintain React Native applications and supporting software infrastructure. Design, build, test, and implement web-based and mobile applications. Work independen…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-25T07:40:54+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5854877641?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5854877641",
+    "extracted_skills": [
+      "React",
+      "React Native"
+    ],
+    "extracted_role": "Mobile Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Pune, Maharashtra"
+      }
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "HealthAsyst",
+    "description": "Deep understanding of React.js core principles (Virtual DOM, Component Lifecycle, Component Composition). Expertise in React Hooks and functional components. Strong practical experience with state management libraries (e.g., Redux, Context API). Web Fundamentals: Expert knowledge of HTML5, CSS3, and advanced JavaScript (ES6). Styling: Experience with modern styling techniques (e.g., CSS-in-JS like Styled Components, CSS Modules, or frameworks like Tailwind CSS/Bootstrap). Tooling: Proficiency w…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-22T07:34:56+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5851865134?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5851865134",
+    "extracted_skills": [
+      "Bootstrap",
+      "React",
+      "Redux",
+      "Tailwind",
+      "Tailwind CSS",
+      "CSS",
+      "JavaScript"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Software Developer",
+    "company": "Randomtrees",
+    "description": "Roles & Responsibilities: Oversee the software engineering function, ensuring best practices, methods, and processes are applied consistently across teams. Provide technical execution and oversight across data and software engineering domains. Conduct peer reviews, peer coding, and mentoring to strengthen team capability and performance. Drive consistency, quality, and efficiency in software delivery. Collaborate with teams to design, develop, and maintain scalable and maintainable software sol…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:40:04+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850380219?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850380219",
+    "extracted_skills": [],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Backend Python Developer",
+    "company": "Randomtrees",
+    "description": "Key Responsibilities: Backend Development Design, develop, and maintain high-performance APIs using Python (FastAPI). Integrate Generative AI models and prompt-based workflows into backend systems. Implement robust error handling, logging, and API performance tuning. Collaborate with frontend and data teams to deliver end-to-end solutions. Database Management Design efficient database schemas and write optimized SQL queries. Work with MySQL, PostgreSQL, and MongoDB for scalable data management.…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:40:04+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850380242?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850380242",
+    "extracted_skills": [
+      "Generative AI",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "FastAPI",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Paramatrix Technologies",
+    "description": "Paramatrix Technologies Pvt. Ltd is seeking a Python Developer (Python  SQL) to join our dynamic team. The ideal candidate will be responsible for developing and maintaining scalable applications, integrating user-facing elements, and ensuring smooth back-end functionality. This role requires collaboration with internal teams to deliver efficient, secure, and high-performing solutions. Key Responsibilities: Application Development: Write scalable and efficient Python code to develop back-end co…",
+    "location_city": "Mumbai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:40:01+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850380076?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850380076",
+    "extracted_skills": [
+      "Python",
+      "SQL",
+      "Collaboration"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Mumbai, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Mumbai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Indian Mesh",
+    "description": "Indian Mesh is seeking a skilled and enthusiastic Python Developer to join our growing technology team. We are looking for an individual with hands-on experience in Python web development, a strong grasp of data structures and algorithms, and a commitment to building robust, scalable applications within a collaborative environment. Responsibilities: Develop, deploy, and maintain web applications using Python, with a focus on Django and Ajax. Apply a good understanding of Data Structures and Alg…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:39:33+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850378620?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850378620",
+    "extracted_skills": [
+      "Django",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Indian Mesh",
+    "description": "Indian Mesh is seeking a skilled and enthusiastic Python Developer to join our growing technology team. We are looking for an individual with hands-on experience in Python web development, a strong grasp of data structures and algorithms, and a commitment to building robust, scalable applications within a collaborative environment. Responsibilities: Develop, deploy, and maintain web applications using Python, with a focus on Django and Ajax. Apply a good understanding of Data Structures and Alg…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:39:33+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850378637?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850378637",
+    "extracted_skills": [
+      "Django",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Bangalore, Karnataka",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Indian Mesh",
+    "description": "Indian Mesh is seeking a skilled and enthusiastic Python Developer to join our growing technology team. We are looking for an individual with hands-on experience in Python web development, a strong grasp of data structures and algorithms, and a commitment to building robust, scalable applications within a collaborative environment. Responsibilities: Develop, deploy, and maintain web applications using Python, with a focus on Django and Ajax. Apply a good understanding of Data Structures and Alg…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:39:32+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850378609?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850378609",
+    "extracted_skills": [
+      "Django",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "React JS Developer",
+    "company": "V Soft Consulting Corporation Private Limited",
+    "description": "We are looking for a skilled React JS Developer to join our team in India. The ideal candidate will have a strong background in front-end development with a focus on building user-friendly and efficient web applications using React JS. Responsibilities Develop and maintain responsive web applications using React JS. Collaborate with cross-functional teams to define, design, and ship new features. Optimize components for maximum performance across a vast array of web-capable devices and browsers…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:39:08+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850377170?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850377170",
+    "extracted_skills": [
+      "React"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ],
+        "display_name": "Hyderabad, Telangana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Full stack Python Developer",
+    "company": "Vichara Technologies",
+    "description": "Key deliverables: Develop investment management and trading/valuation support applications using Python, React, SQL, FastAPI, AWS, and LLM Write and maintain unit tests to ensure code quality Participate in daily scrum meetings with clients to track progress and requirements Implement and maintain REST APIs and UI components Role responsibilities: Design and develop scalable full-stack solutions for financial applications Collaborate with cross-functional teams for cloud deployment and DevOps i…",
+    "location_city": "Delhi",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:39:07+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850377088?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850377088",
+    "extracted_skills": [
+      "LLM",
+      "AWS",
+      "FastAPI",
+      "React",
+      "Python",
+      "SQL",
+      "REST",
+      "Scrum"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Delhi"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Delhi, India"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior React Developer",
+    "company": "Mindera",
+    "description": "Job description As a Senior React Developer, you will be tasked with creating and implementing high-quality and dynamic user interfaces across multiple platforms and devices. Were looking for an individual with a passion for coding and a knack for problem-solving, who thrives in a collaborative environment. This is an incredible opportunity for you to work alongside other talented engineers and designers in delivering exceptional user experiences while promoting best practices in code quality a…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:38:45+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850375762?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850375762",
+    "extracted_skills": [
+      "React"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "display_name": "Chennai, Tamil Nadu",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Developer!",
+    "company": "TechnoGen",
+    "description": "Description We are seeking an experienced Python Developer to join our dynamic team in India. The ideal candidate will have a strong background in Python programming and be able to develop scalable applications while collaborating with various teams. Responsibilities Develop and maintain high-quality Python applications. Collaborate with cross-functional teams to define, design, and ship new features. Identify and resolve performance bottlenecks and bugs. Write reusable, testable, and efficient…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:38:38+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850375320?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850375320",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "System Engineer",
+    "company": "Apps Associates  Private Limited",
+    "description": "Job Description Duties: Data Modeling:* Design and implement efficient data models, ensuring data accuracy and optimal performance. ETL Development:* Develop, maintain, and optimize ETL processes to extract, transform, and load data from various sources into our data warehouse. SQL Expertise:* Write complex SQL queries to extract, manipulate, and analyze data as needed. Python Development:* Develop and maintain Python scripts and applications to support data processing and automation. AWS Exper…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:37:22+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850371226?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850371226",
+    "extracted_skills": [
+      "AWS",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "System Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Developer Lead",
+    "company": "Xoriant Corporation",
+    "description": "Job description Role & responsibilities : Development and debugging of applications using Python. Position Description : Hands-on software development experience in Python Strong experience and knowledge of micro services, and distributed systems. Good analytical and debugging skills to root cause of the issues Developed system programming applications/scripts Have written unit test code for the features developed Exposure to Cloud-native application architectures Exposure to ELK stack and log …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:37:13+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850371055?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850371055",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Trigyn Technologies Limited",
+    "description": "We are seeking a motivated Python Developer with 1.5 years of hands-on experience in Python scripting, MySQL queries, and data manipulation using Pandas. The ideal candidate will contribute to the development, maintenance, and optimization of our applications and data pipelines. Key Responsibilities: Develop, test, and maintain Python scripts for automation, data processing, and integration tasks. Write efficient SQL queries and optimize database performance in MySQL. Use Pandas for data analys…",
+    "location_city": "Delhi",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:37:09+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850370935?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850370935",
+    "extracted_skills": [
+      "MySQL",
+      "Pandas",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Delhi, India",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Delhi"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Senior React Developer",
+    "company": "Yash Technologies Private Limited",
+    "description": "Technical Skills (Must Have) Strong foundational knowledge in HTML5, CSS3 and Javascript. Strong understanding of typescript and development methodologies. Enterprise application development using React 17. Knowledge of dependant react libraries like react router, react query etc. Familiarity with RESTful APIs and asynchronous request handling. State Management using Redux and React Toolkit. Solid understanding of web security and OWASP. TDD/BDD based development using unit testing frameworks l…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:37:08+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850370896?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850370896",
+    "extracted_skills": [
+      "React",
+      "Redux",
+      "JavaScript",
+      "TypeScript",
+      "TDD"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Pune, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Xoriant Corporation",
+    "description": "Role & responsibilities : Development and debugging of applications using Golang or Python. Position Description : Hands-on software development experience in Python or Golang. Strong experience and knowledge of micro services, and distributed systems. Good analytical and debugging skills to root cause of the issues Good experience in some Linux systems. Virtualization, storage, Networking, Infrastructure domain Developed system programming applications/scripts Have written unit test code for t…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-21T07:37:00+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5850370781?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5850370781",
+    "extracted_skills": [
+      "Linux",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka"
+      }
+    }
+  },
+  {
+    "title": "React JS developer",
+    "company": "Ara Resources Private Limited",
+    "description": "We are looking for a React Js Developer with hands-on experience (Expert Level) in front-end development with a focus on JavaScript, TypeScript, and ReactJS. Key Responsibilities: Proficient understanding of HTML5, CSS3, and modern web standards. Strong experience in building responsive, cross-browser-compatible web applications. Experience with state management libraries such as Redux or MobX Integrating with microservices and other backend services. Knowledge of version control systems (e.g.,…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-15T07:51:14+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5842569860?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5842569860",
+    "extracted_skills": [
+      "React",
+      "Redux",
+      "JavaScript",
+      "TypeScript",
+      "Microservices"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Expleo Solutions Limited",
+    "description": "Job Title : Python Developer Experience : 6 Years Location : Pune Job Description : 6 years of experience as a Python Developer,100% WFO Experience on backend Python for writing server-side web application logic. Expertise in at least one popular Python framework (like Django, Flask or Pyramid) – Flask Preferred Hands-on experience with . Azure Appservice, Blob storage , ServiceBus, Functions, SQL Server, APIM, Azure metrics; Hands-on experience on React JS Hands-on experience with Entity Frame…",
+    "location_city": "Pune",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-14T07:30:37+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5841126269?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5841126269",
+    "extracted_skills": [
+      "Azure",
+      "Django",
+      "Flask",
+      "React",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Maharashtra",
+          "Pune"
+        ],
+        "display_name": "Pune, Maharashtra",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Fynd",
+    "description": "What will you do at Fynd Build scalable and loosely coupled services to extend our platform Build bulletproof API integrations with third-party APIs for various use cases Evolve our Infrastructure and add a few more nines to our overall availability Have full autonomy and own your code, and decide on the technologies and tools to deliver as well operate large-scale applications on AWS Give back to the open-source community through contributions on code and blog posts This is a startup so everyt…",
+    "location_city": "Mumbai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-13T07:33:40+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5839227965?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5839227965",
+    "extracted_skills": [
+      "AWS"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Mumbai, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Mumbai"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Senior AWS Cloud and DevOps Engineer",
+    "company": "Topcoder",
+    "description": "​​​​​​ Experience Required: 5–8 Years Job Description We are looking for an experienced AWS Cloud and Python Backend Engineer with strong expertise in cloud-native applications. The ideal candidate should have strong expertise in AWS Cloud infrastructure provisioning with Terraform, experience in scripting with Python, REST API development, CI/CD deployment with Jenkins, and event-driven architecture using Kafka and Kinesis. Mandatory Skills AWS Cloud Services Git & GitHub CI/CD Pipeline Implem…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-12T21:03:26+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5838497557?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5838497557",
+    "extracted_skills": [
+      "AWS",
+      "CI/CD",
+      "Jenkins",
+      "Kafka",
+      "Terraform",
+      "Python",
+      "Git",
+      "GitHub",
+      "REST",
+      "REST API"
+    ],
+    "extracted_role": "DevOps Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad",
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "React Developer",
+    "company": "P99soft",
+    "description": "Position: Sr. React Developer Experience: 3 - 6 Years Location: Hyderabad (Hybrid) Job Summary P99soft is looking for a skilled React Developer with 3 - 6 years of hands-on experience, including expertise in TypeScript, unit testing frameworks (Jest & React Testing Library), and micro-frontend architecture. The ideal candidate will have strong proficiency in building scalable, high-performance web applications using React and modern front-end technologies. Key Responsibilities: Develop, test, a…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 600000.0,
+    "salary_max": 1800000.0,
+    "currency": "INR",
+    "posted_date": "2026-08-12T16:03:47+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5838098218?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5838098218",
+    "extracted_skills": [
+      "React",
+      "TypeScript"
+    ],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Hyderabad, Telangana",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python Developer - Software Engineer",
+    "company": "Citigroup",
+    "description": "The Applications Development Senior Programmer Analyst is an intermediate level position responsible for participation in the establishment and implementation of new or revised application systems and programs in coordination with the Technology team. The overall objective of this role is to contribute to applications systems analysis and programming activities. Responsibilities:  Conduct tasks related to feasibility studies, time and cost estimates, IT planning, risk technology, applications d…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-12T10:58:05+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5837798198?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5837798198",
+    "extracted_skills": [],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location"
+      }
+    }
+  },
+  {
+    "title": "Associate Process Manager",
+    "company": "Personiv",
+    "description": "Responsibilities: Algorithm development Code development, debugging and testing Deployment/Integration Develop back-end components to improve responsiveness and overall performance Improve functionality of existing systems Assess and prioritize feature requests Coordinate with internal teams to understand user requirements and provide technical solutions. Requirements: Strong Python experience, including algorithm development. Strong logic and problem solving skills. Experience in automation, G…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-08T07:27:36+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5832795349?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5832795349",
+    "extracted_skills": [
+      "Python",
+      "Problem Solving"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Lancesoft India Private Limited",
+    "description": "We are seeking a highly skilled Python Developer to join our development team. The ideal candidate should have strong experience in Python programming, backend development, and database management. You will be responsible for building scalable applications, optimizing performance, and collaborating with cross-functional teams to deliver high-quality software solutions. Key Responsibilities: Develop, test, and maintain scalable and efficient Python applications. Write clean, reusable, and optimi…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-08T07:27:20+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5832794132?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5832794132",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "Acesoft Labs India Private Limited",
+    "description": "We are hiring for Python Developer, who can join immediately. Exp- 3-5 years Location- Bangalore Work mode- Hybrid Skill-Python, Data Analysis, Modeller The roles require experience in both front-end and back-end technologies, data analysis, and content labelling Candidates should have a minimum of four years of experience in software engineering, with proficiency in Python and experience in building dashboards and visualizers using frameworks like Flask. Preferred qualifications include profic…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-08-08T07:27:02+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5832794017?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5832794017",
+    "extracted_skills": [
+      "Data Analysis",
+      "Flask",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ],
+        "display_name": "Bangalore, Karnataka",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "python developer",
+    "company": "Capace Software Private Limited",
+    "description": "SENIOR PYTHON DEVELOPER Designation: Senior Python Django Developer Position: Senior Python Developer Job Types : Full-time, Permanent Schedule: Day shift (On-site) Supplemental Pay: Performance bonus, Yearly bonus Ability to commute/relocate : JP Nagar, Bangalore: Reliably commute or willing to relocate with an employer-provided relocation package (Preferred) Experience: Back-end development: 5 years (Required) Job Description: We are looking for a highly skilled Senior Python Django Developer…",
+    "location_city": "Bangalore",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 400000.0,
+    "salary_max": 600000.0,
+    "currency": "INR",
+    "posted_date": "2026-08-05T15:59:04+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5828957450?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5828957450",
+    "extracted_skills": [
+      "Django",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "contract_type": "permanent",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Bangalore, Karnataka",
+        "area": [
+          "India",
+          "Karnataka",
+          "Bangalore"
+        ]
+      }
+    }
+  },
+  {
+    "title": "Java Fullstack Developer with Python",
+    "company": "NAM Info Pvt Ltd",
+    "description": "Hiring Alert – Java Full Stack with Python | Noida | FTE with Client We are hiring for the below opportunity: Role: Java Full Stack Developer with Python Employment Type: Full-Time (FTE) with Client Location: Noida CTC: ₹30–35 LPA  10% Variable ( Maximum budget; non-negotiable ) Notice Period: Immediate joiners or candidates with up to 30 days' notice only Mandatory Skills Strong experience in Java Full Stack development experience Good hands-on experience with Python Relevant experience in mod…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 2500000.0,
+    "salary_max": 3000000.0,
+    "currency": "INR",
+    "posted_date": "2026-08-04T15:56:35+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5827620878?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5827620878",
+    "extracted_skills": [
+      "Java",
+      "Python"
+    ],
+    "extracted_role": "Full Stack Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "contract_time": "full_time",
+      "location": {
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad"
+      }
+    }
+  },
+  {
+    "title": "Python Developer",
+    "company": "VY SYSTEMS PRIVATE LIMITED",
+    "description": "Job Summary We are seeking a skilled Python Developer with experience in building scalable applications using Python frameworks such as Flask and Django. The ideal candidate should have hands-on experience with PySpark for big data processing and strong SQL skills for data analysis and database management. Key Responsibilities Design, develop, test, and maintain Python-based applications. Develop RESTful APIs using Flask and/or Django. Build scalable data processing pipelines using PySpark. Wri…",
+    "location_city": "Hyderabad",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 400000.0,
+    "salary_max": 1800000.0,
+    "currency": "INR",
+    "posted_date": "2026-08-02T15:58:12+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5825579750?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5825579750",
+    "extracted_skills": [
+      "Data Analysis",
+      "Django",
+      "Flask",
+      "Python",
+      "SQL"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "salary_is_predicted": "0",
+      "location": {
+        "display_name": "Hyderabad, Telangana",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Telangana",
+          "Hyderabad"
+        ]
+      }
+    }
+  },
+  {
+    "title": "React developer",
+    "company": "Auzmoratc",
+    "description": "PRIMARY RESPONSIBILITIES: * Develop and execute test plans, test cases, test data, test scenarios, and other testing related documentation based on the requirements and technical specifications * Meeting with the software design team to discuss verification protocols. * Identifying software application weaknesses and target areas. * Write clean, high-quality scripts that test product functionality automatically. * Conduct various tests for systems, networks, applications, databases, software. *…",
+    "location_city": "Mumbai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 10000.0,
+    "salary_max": 30000.0,
+    "currency": "INR",
+    "posted_date": "2026-08-01T10:47:55+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5823353171?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5823353171",
+    "extracted_skills": [],
+    "extracted_role": "Frontend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Mumbai, Maharashtra",
+        "area": [
+          "India",
+          "Maharashtra",
+          "Mumbai"
+        ]
+      },
+      "salary_is_predicted": "0",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Analyst - Python",
+    "company": "BSR & Co",
+    "description": "Description About KPMG in India KPMG entities in India are professional services firm(s). These Indian member firms are affiliated with KPMG International Limited. KPMG was established in India in August 1993. Our professionals leverage the global network of firms, and are conversant with local laws, regulations, markets and competition. KPMG has offices across India in Ahmedabad, Bengaluru, Chandigarh, Chennai, Gurugram, Jaipur, Hyderabad, Jaipur, Kochi, Kolkata, Mumbai, Noida, Pune, Vadodara …",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-25T03:27:34+00:00",
+    "category": "Legal Jobs",
+    "source_url": "https://www.adzuna.in/details/5814491836?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5814491836",
+    "extracted_skills": [],
+    "extracted_role": "Analyst - Python",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ],
+        "display_name": "Gurgaon, Haryana",
+        "__CLASS__": "Adzuna::API::Response::Location"
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Reactivate Your Career Program- Python Developer",
+    "company": "Citigroup",
+    "description": "Citi is delighted to open applications for the Application Development and Software Engineering stream of its Reactivate Your Career Program. The Program is designed to help you transition from a career break into a career within financial services. You may have worked in the finance sector, the tech sector or another industry altogether! Returners in the Application Development and Software Engineering stream, will have the opportunity to utilize their knowledge of applications development pro…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-24T10:53:03+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5813414282?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5813414282",
+    "extracted_skills": [],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python with Azure",
+    "company": "Euphoric Thought Technologies",
+    "description": "Job Summary We are looking for a Software Engineer with 3–5 years of experience in Python development, browser automation, Azure cloud technologies, and API development. The ideal candidate should have hands-on experience in building automation solutions, cloud-native applications, and backend services using Python while collaborating with cross-functional teams to deliver scalable and reliable enterprise solutions. Key Responsibilities * Design, develop, test, and maintain Python-based applica…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 800000.0,
+    "salary_max": 1200000.0,
+    "currency": "INR",
+    "posted_date": "2026-07-14T15:10:37+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5799815069?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5799815069",
+    "extracted_skills": [
+      "Azure",
+      "Python"
+    ],
+    "extracted_role": "Software Engineer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Noida, Ghaziabad",
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ]
+      },
+      "contract_time": "full_time",
+      "contract_type": "permanent"
+    }
+  },
+  {
+    "title": "Senior Python Developer",
+    "company": "Securin Labs",
+    "description": "Who are we? Securin is an AI-driven cybersecurity company focused on proactive, adversarial exposure and vulnerability management. Our mission is to help organizations reduce cyber risk by identifying, prioritising, and remediating the issues that matter most. Powered by a seasoned team of threat researchers and status as a Certified Naming Authority (CNA), Securin combines artificial intelligence / machine learning, threat intelligence, and deep vulnerability research (including the Dark Web) …",
+    "location_city": "South Delhi",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-11T15:09:40+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5796796028?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5796796028",
+    "extracted_skills": [
+      "Machine Learning"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "area": [
+          "India",
+          "Delhi",
+          "South Delhi"
+        ],
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "South Delhi, Delhi"
+      },
+      "salary_is_predicted": "0",
+      "contract_time": "full_time"
+    }
+  },
+  {
+    "title": "Python Developer Assistant Vice President",
+    "company": "Citigroup",
+    "description": "The Python Developer Assistant Vice President is an intermediate level position responsible for participation in the establishment and implementation of new or revised application systems and programs in coordination with the Technology team. The overall objective of this role is to contribute to applications systems analysis and programming activities. Responsibilities:  Conduct tasks related to feasibility studies, time and cost estimates, IT planning, risk technology, applications developmen…",
+    "location_city": "Chennai",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-10T10:40:26+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5795125101?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5795125101",
+    "extracted_skills": [
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Chennai, Tamil Nadu",
+        "area": [
+          "India",
+          "Tamil Nadu",
+          "Chennai"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Python & React Full Stack Developer",
+    "company": "Srijan Technologies",
+    "description": "About US:- We turn customer challenges into growth opportunities. Material is a global strategy partner to the world’s most recognizable brands and innovative companies. Our people around the globe thrive by helping organizations design and deliver rewarding customer experiences. We use deep human insights, design innovation and data to create experiences powered by modern technology. Our approaches speed engagement and growth for the companies we work with and transform relationships between b…",
+    "location_city": "Mini Sectt.",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-05T03:36:07+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5788431980?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5788431980",
+    "extracted_skills": [],
+    "extracted_role": "Full Stack Developer",
+    "is_processed": true,
+    "raw_data": {
+      "salary_is_predicted": "0",
+      "contract_time": "full_time",
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon",
+          "Mini Sectt."
+        ],
+        "display_name": "Mini Sectt., Gurgaon"
+      }
+    }
+  },
+  {
+    "title": "Senior Associate, Data Analytics",
+    "company": "Portage Point Partners",
+    "description": "Portage Point Partners is a Chicago-headquartered advisory, interim management and investment banking firm focused on serving the middle-market. Backed by New Mountain Capital, the firm has grown at over 30% annually since its founding in 2016 and today operates from ten offices across the United States. The firm delivers integrated financial and operational solutions across Transaction Advisory Services, Transaction Execution Services, Office of the CFO, Valuations, Performance Improvement, Tu…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-04T02:47:00+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5787272161?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5787272161",
+    "extracted_skills": [],
+    "extracted_role": "Senior Associate, Data Analytics",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Vice President, Data Analytics",
+    "company": "Portage Point Partners",
+    "description": "Portage Point Partners is a Chicago-headquartered advisory, interim management and investment banking firm focused on serving the middle-market. Backed by New Mountain Capital, the firm has grown at over 30% annually since its founding in 2016 and today operates from ten offices across the United States. The firm delivers integrated financial and operational solutions across Transaction Advisory Services, Transaction Execution Services, Office of the CFO, Valuations, Performance Improvement, Tu…",
+    "location_city": "Gurgaon",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": null,
+    "salary_max": null,
+    "currency": "INR",
+    "posted_date": "2026-07-04T02:23:15+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5787143860?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5787143860",
+    "extracted_skills": [],
+    "extracted_role": "Vice President, Data Analytics",
+    "is_processed": true,
+    "raw_data": {
+      "location": {
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "display_name": "Gurgaon, Haryana",
+        "area": [
+          "India",
+          "Haryana",
+          "Gurgaon"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  },
+  {
+    "title": "Senior Backend Developer (Python, GenAI ), Fin",
+    "company": "Staffnixcom",
+    "description": "Strong Python Backend Engineer Profile with hands-on GenAI capabilities Mandatory (Experience 1) – Must have 3 years of experience in application development using Python (Django) with atleast 6 months of hands on experience building GenAI applications in production Mandatory (Tech skill 1) – Must have strong proficiency in Python with a backend framework (Django, Flask or FastAPI) and developing/consuming RESTful APIs. Mandatory (Tech skill 2) – Must have hands-on experience integrating LLMs (…",
+    "location_city": "Noida",
+    "location_country": "India",
+    "is_remote": false,
+    "salary_min": 1700000.0,
+    "salary_max": 2000000.0,
+    "currency": "INR",
+    "posted_date": "2026-06-30T14:57:48+00:00",
+    "category": "IT Jobs",
+    "source_url": "https://www.adzuna.in/details/5781970861?utm_medium=api&utm_source=5b617857",
+    "source_provider": "adzuna",
+    "source_id": "5781970861",
+    "extracted_skills": [
+      "Django",
+      "FastAPI",
+      "Flask",
+      "Python"
+    ],
+    "extracted_role": "Backend Developer",
+    "is_processed": true,
+    "raw_data": {
+      "contract_time": "full_time",
+      "location": {
+        "display_name": "Noida, Ghaziabad",
+        "__CLASS__": "Adzuna::API::Response::Location",
+        "area": [
+          "India",
+          "Uttar Pradesh",
+          "Ghaziabad",
+          "Noida"
+        ]
+      },
+      "salary_is_predicted": "0"
+    }
+  }
+]

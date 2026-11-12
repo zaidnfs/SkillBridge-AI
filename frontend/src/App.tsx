@@ -12,7 +12,6 @@ const JobExplorerPage = lazy(() => import('./pages/JobExplorerPage').then(m => (
 const ResumeAnalyzerPage = lazy(() => import('./pages/ResumeAnalyzerPage').then(m => ({ default: m.ResumeAnalyzerPage })));
 const MockInterviewPage = lazy(() => import('./pages/MockInterviewPage').then(m => ({ default: m.MockInterviewPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
-const DesignShowcasePage = lazy(() => import('./pages/DesignShowcasePage').then(m => ({ default: m.DesignShowcasePage })));
 
 const PageLoadingFallback: React.FC = () => (
   <div className="flex h-[60vh] w-full items-center justify-center">
@@ -29,9 +28,6 @@ export const App: React.FC = () => {
       <AuthProvider>
         <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
-            {/* Public dummy design system showcase page (for visual review) */}
-            <Route path="/design" element={<DesignShowcasePage />} />
-
             {/* Public routes (redirect to / if already authenticated) */}
             <Route element={<PublicOnlyRoute />}>
               <Route path="/login" element={<LoginPage />} />
