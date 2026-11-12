@@ -4,7 +4,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { Eye, EyeOff, AlertCircle, ArrowRight, Sparkles, Check } from 'lucide-react';
 import { KoboyoSparkle } from '@/components/icons/Koboyo';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
-import { AIBotAvatar } from '@/components/interviews/AIBotAvatar';
 import authHeroImg from '@/assets/auth-hero.jpg';
 
 const GoogleIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
@@ -127,11 +126,8 @@ export const LoginPage: React.FC = () => {
           {/* Active AI Login Loading Overlay */}
           {isLoading && (
             <div className="absolute inset-0 z-30 bg-white/95 backdrop-blur-md rounded-3xl lg:rounded-r-none flex flex-col items-center justify-center p-8 text-center animate-in fade-in-50 duration-200">
-              <div className="relative mb-6 flex items-center justify-center">
-                <AIThinkingOrb state="connecting" size={130} color="#008855" dotSize={1.4} />
-                <div className="absolute -bottom-2 -right-3 z-10 shadow-lg rounded-full bg-white p-1 border border-[#D5E5DC]">
-                  <AIBotAvatar type="droid" size={44} headphones={true} state="working" />
-                </div>
+              <div className="mb-6 flex items-center justify-center">
+                <AIThinkingOrb state="connecting" size={115} color="#008855" dotSize={1.4} />
               </div>
 
               <div className="space-y-2 max-w-sm mx-auto">

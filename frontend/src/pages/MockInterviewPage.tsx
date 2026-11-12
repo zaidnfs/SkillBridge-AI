@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Brain,
   Sparkles,
@@ -24,15 +25,24 @@ import { InterviewChatView } from '@/components/interviews/InterviewChatView';
 import { LoadingSkeleton } from '@/components/shared/LoadingSkeleton';
 import { EmptyState } from '@/components/shared/EmptyState';
 import { ErrorRetryCard } from '@/components/shared/ErrorRetryCard';
-import { AIBotAvatar } from '@/components/interviews/AIBotAvatar';
 import { AILoadingState } from '@/components/shared/AILoadingState';
 import { KoboyoBrain, KoboyoSparkle } from '@/components/icons/Koboyo';
 import { cn } from '@/lib/utils';
 
 export const MockInterviewPage: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const prefillRole = searchParams.get('role') || undefined;
+  const prefillSkillsParam = searchParams.get('skills');
+  const prefillSkills = prefillSkillsParam
+    ? prefillSkillsParam
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : undefined;
+
   const [sessions, setSessions] = useState<InterviewSessionListItem[]>([]);
   const [activeSession, setActiveSession] = useState<InterviewSession | null>(null);
-  const [isSetupOpen, setIsSetupOpen] = useState(false);
+  const [isSetupOpen, setIsSetupOpen] = useState(Boolean(prefillRole || prefillSkills?.length));
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -237,11 +247,9 @@ export const MockInterviewPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Start Hero Card with Bot Mascot */}
+          {/* Quick Start Hero Card */}
           <div className="rounded-3xl border border-[#D5E5DC] bg-gradient-to-r from-[#EEF7F1] via-white to-[#F4F9F6] p-6 sm:p-8 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-            <div className="flex items-center gap-5">
-              <AIBotAvatar type="droid" size={68} headphones={true} statusIndicator="online" />
-              <div className="space-y-1.5 max-w-xl text-center md:text-left">
+            <div className="space-y-1.5 max-w-xl text-center md:text-left">
                 <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[11px] font-bold bg-white border border-[#BBDDCB] text-[#004D2F] shadow-2xs">
                   <KoboyoSparkle size={13} />
                   Knowledge Graph Grounded
@@ -252,7 +260,6 @@ export const MockInterviewPage: React.FC = () => {
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                   Choose roles like <span className="font-semibold text-[#004D2F]">Backend Developer</span> or <span className="font-semibold text-[#004D2F]">Frontend Developer</span>. The AI interviewer generates authentic, scenario-based questions tested against live industry expectations.
                 </p>
-              </div>
             </div>
 
             <button
@@ -380,6 +387,8 @@ export const MockInterviewPage: React.FC = () => {
         onClose={() => setIsSetupOpen(false)}
         onStartSession={handleStartSession}
         isLoading={isSubmitting}
+        initialRole={prefillRole}
+        initialSkills={prefillSkills}
       />
     </div>
   );

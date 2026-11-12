@@ -24,13 +24,23 @@ export const resumeService = {
     return response.data;
   },
 
+  async deleteResume(id: string): Promise<void> {
+    await api.delete(`/resumes/${id}/`);
+  },
+
   async analyzeResume(
     resumeId: string,
     jobId?: string,
-    requiredSkills?: string[]
+    requiredSkills?: string[],
+    jobTitle?: string
   ): Promise<FitScoreResult> {
-    const payload: { job_id?: string; job_required_skills?: string[] } = {};
+    const payload: {
+      job_id?: string;
+      job_title?: string;
+      job_required_skills?: string[];
+    } = {};
     if (jobId) payload.job_id = jobId;
+    if (jobTitle) payload.job_title = jobTitle;
     if (requiredSkills && requiredSkills.length > 0) payload.job_required_skills = requiredSkills;
 
     const response = await api.post<FitScoreResult>(`/resumes/${resumeId}/analyze/`, payload);

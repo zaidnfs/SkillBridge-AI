@@ -131,14 +131,16 @@ class TestJobPostingModel:
 
 @pytest.mark.django_db
 class TestJobPostingEndpoints:
-    """Tests for DRF job listing and detail endpoints."""
+    """Tests for DRF job listing, pagination, sorting, and rich detail endpoints."""
 
     def test_list_jobs_empty(self, api_client):
-        """Test listing jobs when table is empty."""
+        """Test listing jobs when table is empty returns paginated empty results."""
         url = reverse("jobs:job-list")
         response = api_client.get(url)
         assert response.status_code == status.HTTP_200_OK
-        assert response.data == []
+        assert response.data["count"] == 0
+        assert response.data["total_pages"] == 1
+        assert response.data["results"] == []
 
     def test_list_jobs_with_filtering(self, api_client):
         """Test searching and filtering job postings."""
@@ -152,7 +154,7 @@ class TestJobPostingEndpoints:
             source_id="p1",
             is_remote=False,
         )
-        j2 = JobPosting.objects.create(
+        JobPosting.objects.create(
             title="Remote Frontend Engineer",
             company="ReactDevs",
             description="React, TypeScript, Tailwind",
@@ -167,31 +169,112 @@ class TestJobPostingEndpoints:
 
         # 1. Search keyword "Python"
         res_q = api_client.get(url, {"q": "Python"})
-        assert len(res_q.data) == 1
-        assert res_q.data[0]["title"] == j1.title
+        assert res_q.data["count"] == 1
+        assert len(res_q.data["results"]) == 1
+        assert res_q.data["results"][0]["title"] == j1.title
 
         # 2. Filter by city "Bengaluru"
         res_city = api_client.get(url, {"city": "Bengaluru"})
-        assert len(res_city.data) == 1
-        assert res_city.data[0]["company"] == "PyCorp"
+        assert res_city.data["count"] == 1
+        assert res_city.data["results"][0]["company"] == "PyCorp"
 
         # 3. Filter by remote
         res_remote = api_client.get(url, {"remote": "true"})
-        assert len(res_remote.data) == 1
-        assert res_remote.data[0]["company"] == "ReactDevs"
+        assert res_remote.data["count"] == 1
+        assert res_remote.data["results"][0]["company"] == "ReactDevs"
 
-    def test_retrieve_job_detail(self, api_client):
-        """Test retrieving full details of a specific job posting."""
+    def test_list_jobs_pagination_and_sorting(self, api_client):
+        """Test pagination slicing, page_size bounds, and salary sorting."""
+        for idx in range(15):
+            JobPosting.objects.create(
+                title=f"Software Engineer {idx}",
+                company=f"Company {idx}",
+                description="Python and Django backend systems.",
+                location_city="Bengaluru",
+                salary_min=500000 + idx * 100000,
+                salary_max=900000 + idx * 100000,
+                source_url=f"https://example.com/job/{idx}",
+                source_provider="adzuna",
+                source_id=f"pag-{idx}",
+            )
+
+        url = reverse("jobs:job-list")
+
+        # Default page size = 12
+        page_1 = api_client.get(url)
+        assert page_1.status_code == status.HTTP_200_OK
+        assert page_1.data["count"] == 15
+        assert page_1.data["page"] == 1
+        assert page_1.data["page_size"] == 12
+        assert page_1.data["total_pages"] == 2
+        assert len(page_1.data["results"]) == 12
+        assert page_1.data["next"] is not None
+        assert page_1.data["previous"] is None
+
+        # Page 2 returns remaining 3
+        page_2 = api_client.get(url, {"page": 2})
+        assert page_2.status_code == status.HTTP_200_OK
+        assert page_2.data["page"] == 2
+        assert len(page_2.data["results"]) == 3
+        assert page_2.data["next"] is None
+        assert page_2.data["previous"] is not None
+
+        # Custom page_size and salary sorting
+        sorted_high = api_client.get(url, {"page_size": 5, "sort": "salary_high"})
+        assert sorted_high.status_code == status.HTTP_200_OK
+        assert len(sorted_high.data["results"]) == 5
+        salaries = [float(item["salary_max"]) for item in sorted_high.data["results"]]
+        assert salaries == sorted(salaries, reverse=True)
+
+        # Max page_size capped at 100
+        capped = api_client.get(url, {"page_size": 500})
+        assert capped.status_code == status.HTTP_200_OK
+        assert capped.data["page_size"] == 100
+
+    def test_retrieve_job_detail_rich_metadata_without_internal_leaks(self, api_client):
+        """Test retrieving rich details, market insights, similar jobs, and safe metadata."""
         job = JobPosting.objects.create(
             title="DevOps Lead",
             company="CloudTech",
             description="Manage Kubernetes clusters on AWS.",
             location_city="Pune",
+            location_country="IN",
+            salary_min=1500000,
+            salary_max=2500000,
+            currency="INR",
+            category="IT Jobs",
             source_url="https://cloudtech.com/1",
             source_provider="adzuna",
             source_id="ct-100",
             extracted_skills=["AWS", "Kubernetes", "Docker"],
             extracted_role="DevOps Engineer",
+            is_processed=True,
+            raw_data={
+                "__CLASS__": "Adzuna::API::Response::Job",
+                "adref": "secret-tracking-token",
+                "contract_time": "full_time",
+                "contract_type": "permanent",
+                "salary_is_predicted": "1",
+                "location": {
+                    "display_name": "Pune, Maharashtra",
+                    "area": ["India", "Maharashtra", "Pune"],
+                },
+            },
+        )
+        JobPosting.objects.create(
+            title="Platform DevOps Engineer",
+            company="ScaleOps",
+            description="Terraform, Kubernetes, AWS CI/CD.",
+            location_city="Bengaluru",
+            salary_min=1200000,
+            salary_max=2000000,
+            category="IT Jobs",
+            source_url="https://scaleops.com/2",
+            source_provider="adzuna",
+            source_id="so-200",
+            extracted_skills=["AWS", "Kubernetes", "Terraform"],
+            extracted_role="DevOps Engineer",
+            is_processed=True,
         )
 
         url = reverse("jobs:job-detail", kwargs={"id": job.id})
@@ -202,3 +285,21 @@ class TestJobPostingEndpoints:
         assert response.data["title"] == "DevOps Lead"
         assert response.data["extracted_skills"] == ["AWS", "Kubernetes", "Docker"]
         assert response.data["extracted_role"] == "DevOps Engineer"
+        assert response.data["location_display"] == "Pune, Maharashtra"
+        assert response.data["location_area"] == ["India", "Maharashtra", "Pune"]
+        assert response.data["contract_time"] == "Full-time"
+        assert response.data["contract_type"] == "Permanent"
+        assert response.data["salary_is_predicted"] is True
+
+        # Market insights & similar jobs
+        insights = response.data["market_insights"]
+        assert insights["role_title"] == "DevOps Engineer"
+        assert insights["matching_jobs_count"] == 2
+        assert insights["avg_salary_min"] == 1350000.0
+        assert any(item["skill"] == "Terraform" and not item["in_this_job"] for item in insights["top_role_skills"])
+        assert len(response.data["similar_jobs"]) == 1
+        assert response.data["similar_jobs"][0]["title"] == "Platform DevOps Engineer"
+
+        # Ensure raw provider tracking internals are not exposed
+        assert "raw_data" not in response.data
+        assert "adref" not in response.data

@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { resumeService } from '@/services/resumeService';
 import { jobService } from '@/services/jobService';
 import { ResumeSummary, FitScoreResult } from '@/types/resumes';
 import { JobPosting } from '@/types/jobs';
 import { ResumeUploadZone } from '@/components/resumes/ResumeUploadZone';
+import { TargetJobPicker } from '@/components/resumes/TargetJobPicker';
 import { ScoreGauge } from '@/components/shared/ScoreGauge';
 import { EmptyState } from '@/components/shared/EmptyState';
 import { ErrorRetryCard } from '@/components/shared/ErrorRetryCard';
@@ -13,60 +14,76 @@ import { KoboyoSparkle } from '@/components/icons/Koboyo';
 import { SkillGapRecommendations } from '@/components/skills/SkillGapRecommendations';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
 import { AILoadingState } from '@/components/shared/AILoadingState';
-import { AIBotAvatar } from '@/components/interviews/AIBotAvatar';
+import { cn } from '@/lib/utils';
 import {
   FileText,
-  Briefcase,
   Download,
   CheckCircle2,
   AlertTriangle,
   Lightbulb,
   Plus,
   Clock,
-  Loader2,
+  Trash2,
+  MessageSquare,
+  AlertCircle,
+  X,
 } from 'lucide-react';
 
 export const ResumeAnalyzerPage: React.FC = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const preselectedJobId = searchParams.get('jobId');
 
   const [resumes, setResumes] = useState<ResumeSummary[]>([]);
-  const [jobs, setJobs] = useState<JobPosting[]>([]);
   const [selectedResumeId, setSelectedResumeId] = useState<string>('');
-  const [selectedJobId, setSelectedJobId] = useState<string>(preselectedJobId || '');
+  const [selectedJob, setSelectedJob] = useState<JobPosting | null>(null);
+
+  // Target selection mode ('listing' or 'custom')
+  const [targetMode, setTargetMode] = useState<'listing' | 'custom'>('listing');
+  const [customRoleTitle, setCustomRoleTitle] = useState('Backend Developer');
+  const [customSkills, setCustomSkills] = useState<string[]>(['Python', 'Django', 'PostgreSQL', 'Docker']);
 
   const [isLoadingData, setIsLoadingData] = useState(true);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isGeneratingAts, setIsGeneratingAts] = useState(false);
+  const [deletingResumeId, setDeletingResumeId] = useState<string | null>(null);
   const [fitResult, setFitResult] = useState<FitScoreResult | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
   const [showUploadZone, setShowUploadZone] = useState(false);
 
-  // Load initial resumes & jobs list
+  const resultsRef = useRef<HTMLDivElement | null>(null);
+
+  // Load initial resumes and preselected job (if any) or first available job
   const loadData = async () => {
     setIsLoadingData(true);
-    setError(null);
+    setLoadError(null);
     try {
-      const [resumesData, jobsData] = await Promise.all([
-        resumeService.getResumes(),
-        jobService.getJobs({}),
-      ]);
+      const resumesPromise = resumeService.getResumes();
+      const jobPromise = preselectedJobId
+        ? jobService.getJobDetail(preselectedJobId).catch(() => null)
+        : jobService.getJobsPaginated({ page: 1, page_size: 1 }).then((res) => res.results[0] ?? null);
+
+      const [resumesData, initialJob] = await Promise.all([resumesPromise, jobPromise]);
 
       setResumes(resumesData);
-      setJobs(jobsData);
 
       if (resumesData.length > 0 && !selectedResumeId) {
         setSelectedResumeId(resumesData[0].id);
       }
-      if (preselectedJobId) {
-        setSelectedJobId(preselectedJobId);
-      } else if (jobsData.length > 0 && !selectedJobId) {
-        setSelectedJobId(jobsData[0].id);
+
+      if (initialJob) {
+        setSelectedJob(initialJob);
+      } else if (!selectedJob) {
+        const fallbackJobs = await jobService.getJobs({ page_size: 1 });
+        if (fallbackJobs.length > 0) {
+          setSelectedJob(fallbackJobs[0]);
+        }
       }
     } catch (err: any) {
-      setError(
+      setLoadError(
         err.response?.data?.detail ||
-        'Failed to load resume or job data. Please check connection to backend.'
+          'Failed to load resume or job data. Please check connection to backend.'
       );
     } finally {
       setIsLoadingData(false);
@@ -82,22 +99,60 @@ export const ResumeAnalyzerPage: React.FC = () => {
     setSelectedResumeId(newResume.id);
     setShowUploadZone(false);
     setFitResult(null);
+    setActionError(null);
   };
 
+  const handleDeleteResume = async (e: React.MouseEvent, resumeId: string) => {
+    e.stopPropagation();
+    setDeletingResumeId(resumeId);
+    setActionError(null);
+    try {
+      await resumeService.deleteResume(resumeId);
+      const remaining = resumes.filter((r) => r.id !== resumeId);
+      setResumes(remaining);
+      if (selectedResumeId === resumeId) {
+        setSelectedResumeId(remaining[0]?.id || '');
+        setFitResult(null);
+      }
+    } catch (err: any) {
+      setActionError(err.response?.data?.detail || 'Failed to delete resume. Please try again.');
+    } finally {
+      setDeletingResumeId(null);
+    }
+  };
+
+  const canAnalyze =
+    Boolean(selectedResumeId) &&
+    (targetMode === 'listing'
+      ? Boolean(selectedJob?.id)
+      : customSkills.length > 0 && customRoleTitle.trim().length > 0);
+
   const handleAnalyze = async () => {
-    if (!selectedResumeId || !selectedJobId) return;
+    if (!canAnalyze || !selectedResumeId) return;
 
     setIsAnalyzing(true);
-    setError(null);
+    setActionError(null);
 
     try {
-      const result = await resumeService.analyzeResume(selectedResumeId, selectedJobId);
+      const result =
+        targetMode === 'listing' && selectedJob
+          ? await resumeService.analyzeResume(selectedResumeId, selectedJob.id)
+          : await resumeService.analyzeResume(
+              selectedResumeId,
+              undefined,
+              customSkills,
+              customRoleTitle.trim()
+            );
+
       setFitResult(result);
+      setTimeout(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     } catch (err: any) {
-      setError(
+      setActionError(
         err.response?.data?.error ||
-        err.response?.data?.detail ||
-        'Failed to run fit analysis against the selected job posting.'
+          err.response?.data?.detail ||
+          'Failed to run fit analysis against the selected target.'
       );
     } finally {
       setIsAnalyzing(false);
@@ -107,10 +162,11 @@ export const ResumeAnalyzerPage: React.FC = () => {
   const handleDownloadAts = async () => {
     if (!selectedResumeId) return;
     setIsGeneratingAts(true);
+    setActionError(null);
 
     try {
-      const blob = await resumeService.downloadAtsResume(selectedResumeId, selectedJobId || undefined);
-      // Trigger browser download
+      const targetJobId = targetMode === 'listing' ? selectedJob?.id : undefined;
+      const blob = await resumeService.downloadAtsResume(selectedResumeId, targetJobId);
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -119,46 +175,65 @@ export const ResumeAnalyzerPage: React.FC = () => {
       link.click();
       link.remove();
       window.URL.revokeObjectURL(url);
-    } catch (err: any) {
-      alert('Failed to generate ATS resume. Please try again.');
+    } catch {
+      setActionError('Failed to generate ATS DOCX resume. Please try again.');
     } finally {
       setIsGeneratingAts(false);
     }
   };
 
+  const handlePracticeInterview = () => {
+    const roleTitle =
+      fitResult?.job_title ||
+      (targetMode === 'listing' ? selectedJob?.extracted_role || selectedJob?.title : customRoleTitle) ||
+      'Software Engineer';
+    const skillsList =
+      fitResult?.missing_skills && fitResult.missing_skills.length > 0
+        ? [...fitResult.missing_skills, ...(fitResult.matched_skills || [])].slice(0, 8)
+        : targetMode === 'listing'
+        ? (selectedJob?.extracted_skills || []).slice(0, 8)
+        : customSkills.slice(0, 8);
+
+    const roleParam = encodeURIComponent(roleTitle);
+    const skillsParam = encodeURIComponent(skillsList.join(','));
+    navigate(`/interviews?role=${roleParam}${skillsParam ? `&skills=${skillsParam}` : ''}`);
+  };
+
   const selectedResume = resumes.find((r) => r.id === selectedResumeId);
-  const selectedJob = jobs.find((j) => j.id === selectedJobId);
+  const targetDisplayLabel =
+    targetMode === 'listing'
+      ? selectedJob
+        ? `${selectedJob.title} at ${selectedJob.company}`
+        : 'No target job selected'
+      : `${customRoleTitle || 'Custom Role'} (${customSkills.length} skills)`;
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-start gap-4">
-          <AIBotAvatar type="clover" size={46} shading="plastic" headphones={false} statusIndicator="online" className="mt-1 hidden sm:inline-flex" />
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-semibold bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD] font-mono mb-2">
-              <ReiconAtsDoc size={13} strokeWidth={2} />
-              <span>ATS Engine v2.3</span>
-            </div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-[#0A1A12]">
-              Resume Analyzer & ATS Engine
-            </h1>
-            <p className="text-sm text-neutral-500 mt-1">
-              Compute job-fit calibration, uncover skill gaps, and export optimized ATS DOCX resumes
-            </p>
+        <div>
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-xs font-semibold bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD] font-mono mb-2">
+            <ReiconAtsDoc size={13} strokeWidth={2} />
+            <span>ATS Engine v2.3</span>
           </div>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-[#0A1A12]">
+            Resume Analyzer &amp; ATS Engine
+          </h1>
+          <p className="text-sm text-[#475569] mt-1">
+            Compute job-fit calibration, uncover skill gaps, and export optimized ATS DOCX resumes
+          </p>
         </div>
 
         <button
           type="button"
           onClick={() => setShowUploadZone(!showUploadZone)}
-          className="self-start sm:self-auto h-9 px-4 rounded-full text-xs font-semibold text-neutral-700 bg-white border border-neutral-200 hover:bg-neutral-50 active:scale-[0.98] transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+          className="self-start sm:self-auto h-9 px-4 rounded-lg text-xs font-semibold text-[#004D2F] bg-white border border-[#E2E8E5] hover:bg-[#EEF7F1] hover:border-[#00A264]/40 active:scale-[0.98] transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
         >
           {showUploadZone ? (
             'Hide Uploader'
           ) : (
             <>
-              <Plus className="h-4 w-4" />
+              <Plus className="h-4 w-4 text-[#008855]" />
               <span>Upload New Resume</span>
             </>
           )}
@@ -170,7 +245,7 @@ export const ResumeAnalyzerPage: React.FC = () => {
         <div className="p-6 rounded-2xl border border-[#E2E8E5] bg-white shadow-xs space-y-3">
           <div className="space-y-1">
             <h2 className="text-base font-semibold text-[#0A1A12]">Upload Candidate Resume</h2>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-[#475569]">
               Upload your resume in PDF or DOCX format to parse skills and experience
             </p>
           </div>
@@ -185,8 +260,8 @@ export const ResumeAnalyzerPage: React.FC = () => {
           title="Loading Resumes & Live Job Listings"
           description="Connecting to knowledge graph data store to retrieve candidate profiles and active industry roles..."
         />
-      ) : error ? (
-        <ErrorRetryCard message={error} onRetry={loadData} />
+      ) : loadError ? (
+        <ErrorRetryCard message={loadError} onRetry={loadData} />
       ) : resumes.length === 0 ? (
         <EmptyState
           icon={FileText}
@@ -197,105 +272,196 @@ export const ResumeAnalyzerPage: React.FC = () => {
         />
       ) : (
         <div className="space-y-6">
-          {/* Selectors Bar */}
-          <div className="p-5 sm:p-6 rounded-2xl border border-[#E2E8E5] bg-white shadow-xs">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Resume Selector */}
-              <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1.5">
-                  <FileText className="h-3.5 w-3.5 text-[#008855]" />
-                  Select Your Resume
-                </label>
-                <select
-                  value={selectedResumeId}
-                  onChange={(e) => {
-                    setSelectedResumeId(e.target.value);
-                    setFitResult(null);
-                  }}
-                  className="w-full h-11 px-3 rounded-xl border border-neutral-200 bg-[#F8FAF8] text-sm text-[#111827] focus:outline-none focus:bg-white focus:border-[#008855] cursor-pointer shadow-xs"
-                >
-                  {resumes.map((res) => (
-                    <option key={res.id} value={res.id}>
-                      {res.original_filename} ({res.skills?.length || 0} skills identified)
-                    </option>
-                  ))}
-                </select>
-
-                {selectedResume && (
-                  <div className="text-[11px] text-neutral-400 flex items-center gap-2 pt-0.5 font-mono">
-                    <span className="uppercase">{selectedResume.file_type}</span>
-                    <span>•</span>
-                    <span>{(selectedResume.file_size / 1024).toFixed(0)} KB</span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {new Date(selectedResume.created_at).toLocaleDateString()}
-                    </span>
-                  </div>
-                )}
+          {/* Non-blocking Action Error Banner */}
+          {actionError && (
+            <div className="flex items-center justify-between gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-xs text-red-800">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="h-4 w-4 shrink-0 text-red-600" />
+                <span>{actionError}</span>
               </div>
-
-              {/* Job Selector */}
-              <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-neutral-700 flex items-center gap-1.5">
-                  <Briefcase className="h-3.5 w-3.5 text-[#008855]" />
-                  Target Job Listing
-                </label>
-                <select
-                  value={selectedJobId}
-                  onChange={(e) => {
-                    setSelectedJobId(e.target.value);
-                    setFitResult(null);
-                  }}
-                  className="w-full h-11 px-3 rounded-xl border border-neutral-200 bg-[#F8FAF8] text-sm text-[#111827] focus:outline-none focus:bg-white focus:border-[#008855] cursor-pointer shadow-xs"
-                >
-                  {jobs.length === 0 ? (
-                    <option value="" disabled>
-                      No job postings available
-                    </option>
-                  ) : (
-                    jobs.map((job) => (
-                      <option key={job.id} value={job.id}>
-                        {job.title} — {job.company} ({job.location_city || 'India'})
-                      </option>
-                    ))
-                  )}
-                </select>
-
-                {selectedJob && (
-                  <div className="text-[11px] text-neutral-400 flex items-center gap-2 pt-0.5 font-mono">
-                    <span className="font-semibold text-neutral-700">{selectedJob.company}</span>
-                    <span>•</span>
-                    <span>{selectedJob.extracted_skills?.length || 0} skills required</span>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Action Button */}
-            <div className="mt-5 pt-4 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <span className="text-xs text-neutral-500">
-                Compares parsed candidate skills against job requirements using NER & semantic scoring engine.
-              </span>
-
               <button
                 type="button"
-                onClick={handleAnalyze}
-                disabled={!selectedResumeId || !selectedJobId || isAnalyzing}
-                className="w-full sm:w-auto h-11 px-6 rounded-full text-xs font-semibold text-white bg-[#008855] hover:bg-[#007347] active:scale-[0.98] transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-sm shadow-[#008855]/20 cursor-pointer"
+                onClick={() => setActionError(null)}
+                aria-label="Dismiss error"
+                className="text-red-600 hover:text-red-900 cursor-pointer"
               >
-                {isAnalyzing ? (
-                  <div className="flex items-center gap-2">
-                    <AIThinkingOrb state="searching" size={20} color="#FFFFFF" />
-                    <span>Analyzing Fit...</span>
-                  </div>
-                ) : (
-                  <>
-                    <KoboyoSparkle size={14} strokeWidth={2.2} />
-                    <span>Analyze Fit Score</span>
-                  </>
-                )}
+                <X className="h-4 w-4" />
               </button>
+            </div>
+          )}
+
+          {/* Step-by-Step Workbench */}
+          <div className="p-5 sm:p-6 rounded-2xl border border-[#E2E8E5] bg-white shadow-xs space-y-6">
+            {/* Step 1: Resume Selection */}
+            <section className="space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="h-6 w-6 rounded-md bg-[#004D2F] text-white text-xs font-mono font-bold inline-flex items-center justify-center">
+                    1
+                  </span>
+                  <h2 className="text-sm font-bold text-[#0A1A12]">Select Your Resume</h2>
+                </div>
+                <span className="text-[11px] font-mono text-[#475569]">
+                  {resumes.length} {resumes.length === 1 ? 'resume' : 'resumes'} stored
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {resumes.map((res) => {
+                  const isActive = res.id === selectedResumeId;
+                  return (
+                    <div
+                      key={res.id}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => {
+                        setSelectedResumeId(res.id);
+                        setFitResult(null);
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          setSelectedResumeId(res.id);
+                          setFitResult(null);
+                        }
+                      }}
+                      className={cn(
+                        'rounded-xl border p-3.5 transition-all cursor-pointer flex flex-col justify-between gap-2.5 focus:outline-none focus:ring-2 focus:ring-[#00A264]',
+                        isActive
+                          ? 'bg-[#EEF7F1] border-[#008855] shadow-xs'
+                          : 'bg-[#F8FAF8] border-[#E2E8E5] hover:bg-white hover:border-[#008855]/45'
+                      )}
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0 space-y-1">
+                          <div className="flex items-center gap-1.5">
+                            <FileText className="h-3.5 w-3.5 text-[#008855] shrink-0" />
+                            <span className="text-xs font-bold text-[#0A1A12] truncate">
+                              {res.original_filename}
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-[#475569] flex items-center gap-1.5 font-mono">
+                            <span className="uppercase">{res.file_type}</span>
+                            <span>•</span>
+                            <span>{(res.file_size / 1024).toFixed(0)} KB</span>
+                            <span>•</span>
+                            <span className="inline-flex items-center gap-1">
+                              <Clock className="h-3 w-3" />
+                              {new Date(res.created_at).toLocaleDateString()}
+                            </span>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={(e) => handleDeleteResume(e, res.id)}
+                          disabled={deletingResumeId === res.id}
+                          aria-label={`Delete ${res.original_filename}`}
+                          className="p-1.5 rounded-md text-neutral-400 hover:text-red-600 hover:bg-white transition-colors shrink-0 cursor-pointer disabled:opacity-40"
+                        >
+                          <Trash2 className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+
+                      {/* Parsed Skills Preview */}
+                      <div className="flex flex-wrap gap-1 pt-1 border-t border-neutral-200/70">
+                        {(res.skills || []).slice(0, 4).map((skill) => (
+                          <span
+                            key={skill}
+                            className="text-[10px] px-1.5 py-0.5 rounded bg-white border border-[#D6E8DD] text-[#004D2F] font-mono"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                        {(res.skills?.length || 0) > 4 && (
+                          <span className="text-[10px] font-mono text-[#475569] self-center pl-0.5">
+                            +{res.skills.length - 4} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            {/* Step 2: Searchable Target Job Picker */}
+            <section className="pt-5 border-t border-neutral-100 space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="h-6 w-6 rounded-md bg-[#004D2F] text-white text-xs font-mono font-bold inline-flex items-center justify-center">
+                    2
+                  </span>
+                  <h2 className="text-sm font-bold text-[#0A1A12]">
+                    Choose Target Job Listing or Custom Skills
+                  </h2>
+                </div>
+                <span className="text-[11px] font-mono text-[#475569]">
+                  Search across all live postings by role, company, city, or skill
+                </span>
+              </div>
+
+              <TargetJobPicker
+                selectedJob={selectedJob}
+                onSelectJob={(job) => {
+                  setSelectedJob(job);
+                  setFitResult(null);
+                }}
+                resumeSkills={selectedResume?.skills || []}
+                mode={targetMode}
+                onModeChange={(nextMode) => {
+                  setTargetMode(nextMode);
+                  setFitResult(null);
+                }}
+                customRoleTitle={customRoleTitle}
+                onCustomRoleTitleChange={setCustomRoleTitle}
+                customSkills={customSkills}
+                onCustomSkillsChange={setCustomSkills}
+                initiallyExpanded={!preselectedJobId}
+              />
+            </section>
+
+            {/* Action Bar */}
+            <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="text-xs text-[#475569] min-w-0">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-neutral-400 block">
+                  Ready to compare
+                </span>
+                <span className="font-medium text-[#0A1A12] truncate block">
+                  {selectedResume?.original_filename || 'No resume'} → {targetDisplayLabel}
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={handleDownloadAts}
+                  disabled={!selectedResumeId || isGeneratingAts}
+                  className="h-10 px-4 rounded-lg text-xs font-semibold text-[#004D2F] bg-white border border-[#00A264]/40 hover:bg-[#EEF7F1] active:scale-[0.98] transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Download className="h-3.5 w-3.5 text-[#008855]" />
+                  <span>{isGeneratingAts ? 'Generating DOCX...' : 'Export ATS DOCX'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleAnalyze}
+                  disabled={!canAnalyze || isAnalyzing}
+                  className="h-10 px-6 rounded-lg text-xs font-semibold text-white bg-[#008855] hover:bg-[#007347] active:scale-[0.98] transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-sm shadow-[#008855]/20 cursor-pointer"
+                >
+                  {isAnalyzing ? (
+                    <div className="flex items-center gap-2">
+                      <AIThinkingOrb state="searching" size={18} color="#FFFFFF" />
+                      <span>Analyzing Fit...</span>
+                    </div>
+                  ) : (
+                    <>
+                      <KoboyoSparkle size={14} strokeWidth={2.2} />
+                      <span>Analyze Fit Score</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -320,17 +486,17 @@ export const ResumeAnalyzerPage: React.FC = () => {
 
           {/* Analysis Results View */}
           {fitResult && (
-            <div className="space-y-6 animate-in fade-in-50 duration-300">
+            <div ref={resultsRef} className="space-y-6 animate-in fade-in-50 duration-300">
               {/* Score & Summary Card */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Score Gauge Card */}
                 <div className="flex flex-col items-center justify-center p-6 text-center rounded-2xl border border-[#E2E8E5] bg-white shadow-xs">
                   <div className="pb-3 text-center">
                     <h3 className="text-base font-semibold text-[#0A1A12]">Match Score</h3>
-                    <p className="text-xs text-neutral-500">Objective calibration against listing</p>
+                    <p className="text-xs text-[#475569]">Objective calibration against listing</p>
                   </div>
                   <ScoreGauge score={Math.round(fitResult.fit_score)} size={140} />
-                  <p className="text-xs text-neutral-500 mt-4 font-mono">
+                  <p className="text-xs text-[#475569] mt-4 font-mono">
                     {fitResult.total_matched_skills} of {fitResult.total_required_skills} required skills matched
                   </p>
                 </div>
@@ -338,10 +504,10 @@ export const ResumeAnalyzerPage: React.FC = () => {
                 {/* Analysis Summary & ATS Action */}
                 <div className="lg:col-span-2 p-6 rounded-2xl border border-[#E2E8E5] bg-white shadow-xs flex flex-col justify-between space-y-4">
                   <div className="space-y-3">
-                    <div className="flex items-center justify-between border-b border-neutral-100 pb-3">
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-neutral-100 pb-3">
                       <div>
                         <h3 className="text-lg font-bold text-[#0A1A12]">Executive Evaluation</h3>
-                        <p className="text-xs text-neutral-500">
+                        <p className="text-xs text-[#475569]">
                           Algorithmically evaluated by SkillBridge Resume Engine
                         </p>
                       </div>
@@ -350,19 +516,19 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       </span>
                     </div>
 
-                    <p className="text-sm text-[#111827] leading-relaxed bg-[#F8FAF8] p-4 rounded-xl border border-[#E2E8E5]">
+                    <p className="text-sm text-[#0F291B] leading-relaxed bg-[#F8FAF8] p-4 rounded-xl border border-[#E2E8E5]">
                       {fitResult.summary}
                     </p>
 
                     {fitResult.recommendations && fitResult.recommendations.length > 0 && (
                       <div className="space-y-2">
-                        <h4 className="text-xs font-semibold text-neutral-400 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                        <h4 className="text-xs font-semibold text-[#475569] uppercase tracking-wider flex items-center gap-1.5 font-mono">
                           <Lightbulb className="h-3.5 w-3.5 text-amber-500" /> Recommendations for ATS Optimization
                         </h4>
-                        <ul className="space-y-1.5 text-xs text-neutral-600">
+                        <ul className="space-y-1.5 text-xs text-[#1C3829]">
                           {fitResult.recommendations.map((rec, i) => (
                             <li key={i} className="flex items-start gap-2">
-                              <span className="h-1.5 w-1.5 rounded-full bg-[#008855] mt-1 shrink-0" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-[#008855] mt-1.5 shrink-0" />
                               <span>{rec}</span>
                             </li>
                           ))}
@@ -371,28 +537,39 @@ export const ResumeAnalyzerPage: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <span className="text-xs text-neutral-500">
-                      Ready to apply? Generate a formatted, ATS-compliant DOCX document highlighting matched keywords.
+                  <div className="pt-4 border-t border-neutral-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span className="text-xs text-[#475569]">
+                      Tailor your DOCX resume or rehearse interview questions for this target role.
                     </span>
-                    <button
-                      type="button"
-                      onClick={handleDownloadAts}
-                      disabled={isGeneratingAts}
-                      className="shrink-0 h-10 px-5 rounded-full text-xs font-semibold text-white bg-[#008855] hover:bg-[#007347] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm shadow-[#008855]/20 disabled:opacity-50"
-                    >
-                      {isGeneratingAts ? (
-                        <div className="flex items-center gap-2">
-                          <AIThinkingOrb state="composing" size={20} color="#FFFFFF" />
-                          <span>Generating ATS DOCX...</span>
-                        </div>
-                      ) : (
-                        <>
-                          <Download className="h-4 w-4" />
-                          <span>Download ATS Resume (.docx)</span>
-                        </>
-                      )}
-                    </button>
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        onClick={handlePracticeInterview}
+                        className="h-10 px-4 rounded-lg text-xs font-semibold text-[#004D2F] bg-white border border-[#00A264]/40 hover:bg-[#EEF7F1] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                      >
+                        <MessageSquare className="h-3.5 w-3.5 text-[#008855]" />
+                        <span>Practice Interview</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handleDownloadAts}
+                        disabled={isGeneratingAts}
+                        className="h-10 px-5 rounded-lg text-xs font-semibold text-white bg-[#008855] hover:bg-[#007347] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm shadow-[#008855]/20 disabled:opacity-50"
+                      >
+                        {isGeneratingAts ? (
+                          <div className="flex items-center gap-2">
+                            <AIThinkingOrb state="composing" size={18} color="#FFFFFF" />
+                            <span>Generating ATS DOCX...</span>
+                          </div>
+                        ) : (
+                          <>
+                            <Download className="h-4 w-4" />
+                            <span>Download ATS Resume (.docx)</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -406,12 +583,12 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       <CheckCircle2 className="h-4 w-4 text-[#008855]" />
                       <h3 className="text-base font-semibold text-[#0A1A12]">Matched Skills</h3>
                     </div>
-                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD]">
+                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD]">
                       {fitResult.matched_skills.length} Present
                     </span>
                   </div>
 
-                  <p className="text-xs text-neutral-500">
+                  <p className="text-xs text-[#475569]">
                     Skills found in both your resume and the target job posting
                   </p>
 
@@ -420,7 +597,7 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       {fitResult.matched_skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 text-xs font-medium rounded-lg bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD] flex items-center gap-1"
+                          className="px-2.5 py-1 text-xs font-medium rounded-lg bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD] flex items-center gap-1 font-mono"
                         >
                           <CheckCircle2 className="h-3 w-3 text-[#008855]" />
                           {skill}
@@ -428,7 +605,7 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-xs text-neutral-500 italic">
+                    <p className="text-xs text-[#475569] italic">
                       No direct required skills matched for this listing yet.
                     </p>
                   )}
@@ -441,12 +618,12 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       <AlertTriangle className="h-4 w-4 text-amber-500" />
                       <h3 className="text-base font-semibold text-[#0A1A12]">Missing Skills (Skill Gaps)</h3>
                     </div>
-                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200">
+                    <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#FFFBEB] text-[#78350F] border border-[#FCD34D]">
                       {fitResult.missing_skills.length} Gaps
                     </span>
                   </div>
 
-                  <p className="text-xs text-neutral-500">
+                  <p className="text-xs text-[#475569]">
                     Target requirements missing from your resume — curated learning resources shown below
                   </p>
 
@@ -455,7 +632,7 @@ export const ResumeAnalyzerPage: React.FC = () => {
                       {fitResult.missing_skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-2.5 py-1 text-xs font-medium rounded-lg bg-amber-50 text-amber-800 border border-amber-200 flex items-center gap-1"
+                          className="px-2.5 py-1 text-xs font-medium rounded-lg bg-[#FFFBEB] text-[#78350F] border border-[#FCD34D] flex items-center gap-1 font-mono"
                         >
                           <AlertTriangle className="h-3 w-3 text-amber-600" />
                           {skill}

@@ -14,7 +14,6 @@ import { InteractiveMarketTrendsChart } from '@/components/dashboard/Interactive
 import { KoboyoSparkle, KoboyoBrain } from '@/components/icons/Koboyo';
 import { ReiconGraph, ReiconRadar, ReiconAtsDoc } from '@/components/icons/Reicon';
 import { AnimatedNumber } from '@/components/reactbits/AnimatedNumber';
-import { AIBotAvatar } from '@/components/interviews/AIBotAvatar';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
 import {
   FileText,
@@ -49,13 +48,13 @@ export const DashboardPage: React.FC = () => {
     const loadOverviewData = async () => {
       try {
         const [jobs, resumes] = await Promise.allSettled([
-          jobService.getJobs({}),
+          jobService.getJobsPaginated({ page_size: 1 }),
           resumeService.getResumes(),
         ]);
 
         if (isMounted) {
           if (jobs.status === 'fulfilled') {
-            setJobCount(jobs.value.length);
+            setJobCount(jobs.value.count);
           }
           if (resumes.status === 'fulfilled') {
             setResumeCount(resumes.value.length);
@@ -86,8 +85,7 @@ export const DashboardPage: React.FC = () => {
           }}
         />
 
-        <div className="flex items-center gap-4 relative z-10 max-w-xl">
-          <AIBotAvatar type="droid" size={54} headphones={true} statusIndicator="online" className="hidden sm:inline-flex shrink-0" />
+        <div className="relative z-10 max-w-xl">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md text-xs font-semibold bg-[#EEF7F1] text-[#004D2F] border border-[#D6E8DD] font-mono">
               <KoboyoSparkle size={13} strokeWidth={2.2} />

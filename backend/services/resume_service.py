@@ -13,9 +13,12 @@ from pathlib import Path
 import pypdf
 from pypdf.errors import PdfReadError
 import docx
-from docx.shared import Inches, Pt, RGBColor
-from docx.enum.text import WD_ALIGN_PARAGRAPH
 
+from services.ats_resume_builder import (
+    build_ats_resume_docx,
+    clean_extracted_resume_text,
+    parse_resume_sections,
+)
 from services.ner_service import NERService, get_ner_service
 
 logger = logging.getLogger(__name__)
@@ -94,7 +97,8 @@ class ResumeService:
             full_text = "\n\n".join(pages_text).strip()
             if not full_text:
                 logger.warning("PDF extracted text is empty or image-only.")
-            return full_text
+                return full_text
+            return clean_extracted_resume_text(full_text)
 
         except PdfReadError as exc:
             logger.error(f"pypdf reader error: {exc}")
@@ -182,8 +186,12 @@ class ResumeService:
         email_match = re.search(email_pattern, text)
         email = email_match.group(0) if email_match else None
 
-        # Phone (India + International formats)
-        phone_pattern = r"(?:\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}|\b[6-9]\d{9}\b"
+        # Phone (India + International formats including (+91) 89278-95633)
+        phone_pattern = (
+            r"(?:\(\+?\d{1,3}\)|\+?\d{1,3})[-.\s]?\d{5}[-.\s]?\d{5}"
+            r"|(?:\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}"
+            r"|\b[6-9]\d{9}\b"
+        )
         phone_match = re.search(phone_pattern, text)
         phone = phone_match.group(0) if phone_match else None
 
@@ -207,42 +215,9 @@ class ResumeService:
     def parse_sections(self, text: str) -> dict[str, str]:
         """
         Segment the raw text into standard resume sections:
-        Summary, Experience, Education, Projects, Skills.
+        Summary, Experience, Projects, Education, Skills, Certifications.
         """
-        if not text:
-            return {}
-
-        headers = [
-            ("summary", r"(?:summary|professional summary|profile|about me|career objective)"),
-            ("skills", r"(?:skills|technical skills|technologies|core competencies)"),
-            ("experience", r"(?:experience|work experience|employment history|work history)"),
-            ("education", r"(?:education|academic background|qualifications)"),
-            ("projects", r"(?:projects|personal projects|academic projects)"),
-            ("certifications", r"(?:certifications|certificates|licenses)"),
-        ]
-
-        pattern = r"(?i)(?:\n|\A)(?P<header>" + "|".join(h[1] for h in headers) + r")\s*[:\n]"
-        matches = list(re.finditer(pattern, text))
-
-        sections: dict[str, str] = {}
-        if not matches:
-            sections["body"] = text.strip()
-            return sections
-
-        for i, match in enumerate(matches):
-            header_text = match.group("header").lower()
-            canonical_name = "other"
-            for name, regex in headers:
-                if re.search(regex, header_text, re.IGNORECASE):
-                    canonical_name = name
-                    break
-
-            start = match.end()
-            end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
-            content = text[start:end].strip()
-            sections[canonical_name] = content
-
-        return sections
+        return parse_resume_sections(text)
 
     def parse_resume(self, file_obj: BinaryIO | Any, filename: str) -> dict[str, Any]:
         """
@@ -417,183 +392,13 @@ class ResumeService:
         target_job: dict[str, Any] | None = None,
     ) -> io.BytesIO:
         """
-        Generate a clean, professional, ATS-compliant DOCX resume document.
-        - Single-column standard flow (compatible with Applicant Tracking Systems).
-        - Standard typography (Calibri, 11pt body, 14pt headings).
-        - Highlighted and prioritized target skills matching the selected job.
+        Generate a clean, professional, LaTeX-styled ATS-compliant DOCX resume document.
+        - A4 page with crisp margins, classic serif typography, Small-Caps headings + bottom rules.
+        - Right-aligned tab stops for Organization/Location and Role/Date headers.
+        - Prioritized target skills and highlighted technical keywords.
         Returns an in-memory BytesIO buffer ready for HTTP streaming or file storage.
         """
-        doc = docx.Document()
-
-        # Set page margins to standard 0.75-inch margins
-        for section in doc.sections:
-            section.top_margin = Inches(0.75)
-            section.bottom_margin = Inches(0.75)
-            section.left_margin = Inches(0.75)
-            section.right_margin = Inches(0.75)
-
-        contact = resume_data.get("contact_info", {})
-        sections = resume_data.get("sections", {})
-        candidate_skills = resume_data.get("skills", [])
-
-        # Target job skills for keyword prioritization
-        target_skills = []
-        target_title = ""
-        if target_job:
-            target_skills = target_job.get("extracted_skills", []) or target_job.get("skills", [])
-            target_title = target_job.get("title", "")
-
-        # ---------------------------------------------------------------------
-        # Header: Candidate Name & Contact Info
-        # ---------------------------------------------------------------------
-        name_p = doc.add_paragraph()
-        name_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        name_run = name_p.add_run(resume_data.get("candidate_name") or "CANDIDATE NAME")
-        name_run.font.name = "Calibri"
-        name_run.font.size = Pt(18)
-        name_run.font.bold = True
-        name_run.font.color.rgb = RGBColor(31, 41, 55)  # Dark Gray/Slate
-
-        # Contact Details Bar
-        contact_parts = []
-        if contact.get("email"):
-            contact_parts.append(contact["email"])
-        if contact.get("phone"):
-            contact_parts.append(contact["phone"])
-        if contact.get("linkedin"):
-            contact_parts.append(contact["linkedin"])
-        if contact.get("github"):
-            contact_parts.append(contact["github"])
-
-        if contact_parts:
-            contact_p = doc.add_paragraph()
-            contact_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            contact_run = contact_p.add_run(" | ".join(contact_parts))
-            contact_run.font.name = "Calibri"
-            contact_run.font.size = Pt(10)
-            contact_run.font.color.rgb = RGBColor(107, 114, 128)
-
-        # ---------------------------------------------------------------------
-        # Section 1: Professional Summary
-        # ---------------------------------------------------------------------
-        self._add_section_heading(doc, "PROFESSIONAL SUMMARY")
-        summary_text = sections.get("summary")
-        if not summary_text:
-            if target_title:
-                summary_text = (
-                    f"Results-driven technical professional seeking opportunities as {target_title}. "
-                    f"Proficient in {', '.join(candidate_skills[:6]) if candidate_skills else 'core software engineering practices'}, "
-                    "with demonstrated problem-solving abilities and strong engineering foundations."
-                )
-            else:
-                summary_text = (
-                    "Results-oriented software engineer with foundational expertise across technical systems, "
-                    "software development lifecycles, and modern industry standards."
-                )
-
-        p = doc.add_paragraph()
-        run = p.add_run(summary_text)
-        run.font.name = "Calibri"
-        run.font.size = Pt(10.5)
-
-        # ---------------------------------------------------------------------
-        # Section 2: Technical Skills (Target Prioritized)
-        # ---------------------------------------------------------------------
-        self._add_section_heading(doc, "TECHNICAL SKILLS")
-
-        # Organize skills: highlight matched target skills first
-        matched = [s for s in candidate_skills if any(s.lower() == ts.lower() for ts in target_skills)]
-        other = [s for s in candidate_skills if s not in matched]
-        ordered_skills = matched + other
-
-        skills_p = doc.add_paragraph()
-        if ordered_skills:
-            run_lbl = skills_p.add_run("Core Competencies: ")
-            run_lbl.font.name = "Calibri"
-            run_lbl.font.size = Pt(10.5)
-            run_lbl.font.bold = True
-
-            run_skills = skills_p.add_run(", ".join(ordered_skills))
-            run_skills.font.name = "Calibri"
-            run_skills.font.size = Pt(10.5)
-        else:
-            run = skills_p.add_run("Software Engineering, Problem Solving, Data Structures, Algorithms")
-            run.font.name = "Calibri"
-            run.font.size = Pt(10.5)
-
-        # ---------------------------------------------------------------------
-        # Section 3: Professional Experience
-        # ---------------------------------------------------------------------
-        self._add_section_heading(doc, "PROFESSIONAL EXPERIENCE")
-        exp_text = sections.get("experience")
-        if exp_text:
-            for line in exp_text.split("\n"):
-                clean = line.strip()
-                if clean:
-                    p = doc.add_paragraph(style="List Bullet")
-                    run = p.add_run(clean.lstrip("-•* "))
-                    run.font.name = "Calibri"
-                    run.font.size = Pt(10)
-        else:
-            p = doc.add_paragraph(style="List Bullet")
-            run = p.add_run("Developed and maintained software components following agile engineering practices.")
-            run.font.name = "Calibri"
-            run.font.size = Pt(10)
-
-        # ---------------------------------------------------------------------
-        # Section 4: Projects
-        # ---------------------------------------------------------------------
-        self._add_section_heading(doc, "PROJECTS")
-        proj_text = sections.get("projects")
-        if proj_text:
-            for line in proj_text.split("\n"):
-                clean = line.strip()
-                if clean:
-                    p = doc.add_paragraph(style="List Bullet")
-                    run = p.add_run(clean.lstrip("-•* "))
-                    run.font.name = "Calibri"
-                    run.font.size = Pt(10)
-        else:
-            p = doc.add_paragraph(style="List Bullet")
-            run = p.add_run("Engineered scalable full-stack applications integrating automated data pipelines and REST APIs.")
-            run.font.name = "Calibri"
-            run.font.size = Pt(10)
-
-        # ---------------------------------------------------------------------
-        # Section 5: Education
-        # ---------------------------------------------------------------------
-        self._add_section_heading(doc, "EDUCATION")
-        edu_text = sections.get("education")
-        if edu_text:
-            for line in edu_text.split("\n"):
-                clean = line.strip()
-                if clean:
-                    p = doc.add_paragraph()
-                    run = p.add_run(clean)
-                    run.font.name = "Calibri"
-                    run.font.size = Pt(10)
-        else:
-            p = doc.add_paragraph()
-            run = p.add_run("Bachelor of Technology / Bachelor of Science in Computer Science & Engineering")
-            run.font.name = "Calibri"
-            run.font.size = Pt(10)
-
-        # Save to buffer
-        buffer = io.BytesIO()
-        doc.save(buffer)
-        buffer.seek(0)
-        return buffer
-
-    def _add_section_heading(self, doc: docx.Document, title: str) -> None:
-        """Helper to append a clean, ATS-compliant section header."""
-        p = doc.add_paragraph()
-        p.paragraph_format.space_before = Pt(8)
-        p.paragraph_format.space_after = Pt(2)
-        run = p.add_run(title)
-        run.font.name = "Calibri"
-        run.font.size = Pt(12)
-        run.font.bold = True
-        run.font.color.rgb = RGBColor(17, 24, 39)  # Deep Charcoal
+        return build_ats_resume_docx(resume_data=resume_data, target_job=target_job)
 
 
 # =============================================================================

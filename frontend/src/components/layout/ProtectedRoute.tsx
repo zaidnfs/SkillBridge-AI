@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
-import { AIBotAvatar } from '@/components/interviews/AIBotAvatar';
 
 export const ProtectedRoute: React.FC = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -10,11 +9,8 @@ export const ProtectedRoute: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen w-full flex flex-col items-center justify-center p-6 bg-[#F3F5F4] text-[#0A1A12]">
-        <div className="relative mb-6 flex items-center justify-center">
-          <AIThinkingOrb state="connecting" size={120} color="#008855" dotSize={1.4} />
-          <div className="absolute -bottom-2 -right-3 z-10 shadow-lg rounded-full bg-white p-1 border border-[#D5E5DC]">
-            <AIBotAvatar type="droid" size={44} headphones={true} state="working" />
-          </div>
+        <div className="mb-6 flex items-center justify-center">
+          <AIThinkingOrb state="connecting" size={110} color="#008855" dotSize={1.4} />
         </div>
         <div className="space-y-2 text-center max-w-sm">
           <h3 className="text-lg font-bold text-[#0A1A12] tracking-tight">

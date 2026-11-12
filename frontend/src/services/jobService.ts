@@ -3,21 +3,52 @@ import { JobFilterParams, JobMarketQueryResponse, JobPosting } from '../types/jo
 import { PaginatedResponse } from '../types/api';
 
 export const jobService = {
-  async getJobs(params?: JobFilterParams): Promise<JobPosting[]> {
+  async getJobsPaginated(params?: JobFilterParams): Promise<PaginatedResponse<JobPosting>> {
     const response = await api.get<JobPosting[] | PaginatedResponse<JobPosting>>('/jobs/', {
       params: {
         q: params?.q || undefined,
         city: params?.city || undefined,
         remote: params?.remote !== undefined ? params.remote : undefined,
         category: params?.category || undefined,
+        sort: params?.sort || undefined,
+        page: params?.page || undefined,
+        page_size: params?.page_size || undefined,
       },
     });
 
-    // Handle both plain array and paginated format
     if (Array.isArray(response.data)) {
-      return response.data;
+      return {
+        count: response.data.length,
+        next: null,
+        previous: null,
+        page: 1,
+        page_size: response.data.length || 12,
+        total_pages: 1,
+        results: response.data,
+      };
     }
-    return response.data.results || [];
+
+    return {
+      count: response.data.count ?? response.data.results?.length ?? 0,
+      next: response.data.next ?? null,
+      previous: response.data.previous ?? null,
+      page: response.data.page ?? params?.page ?? 1,
+      page_size: response.data.page_size ?? params?.page_size ?? 12,
+      total_pages:
+        response.data.total_pages ??
+        Math.max(
+          1,
+          Math.ceil(
+            (response.data.count ?? 0) / (response.data.page_size ?? params?.page_size ?? 12)
+          )
+        ),
+      results: response.data.results || [],
+    };
+  },
+
+  async getJobs(params?: JobFilterParams): Promise<JobPosting[]> {
+    const paginated = await this.getJobsPaginated(params);
+    return paginated.results;
   },
 
   async getJobDetail(id: string): Promise<JobPosting> {

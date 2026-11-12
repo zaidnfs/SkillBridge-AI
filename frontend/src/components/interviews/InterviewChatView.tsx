@@ -18,7 +18,6 @@ import { AnswerInputBox } from './AnswerInputBox';
 import { InterviewSummaryReport } from './InterviewSummaryReport';
 import { VoiceModeToggle } from './VoiceModeToggle';
 import { useVoicePlayer } from '@/hooks/useVoicePlayer';
-import { AIBotAvatar } from './AIBotAvatar';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
 import { cn } from '@/lib/utils';
 
@@ -92,7 +91,9 @@ export const InterviewChatView: React.FC<InterviewChatViewProps> = ({
       {/* Session Progress Header */}
       <div className="bg-white border border-[#D5E5DC] rounded-2xl p-4 sm:p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <AIBotAvatar type="droid" size={42} headphones={true} statusIndicator="online" />
+          <div className="h-10 w-10 rounded-lg bg-[#EEF7F1] border border-[#D6E8DD] text-[#008855] flex items-center justify-center shrink-0">
+            <KoboyoBrain size={20} strokeWidth={2} />
+          </div>
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-base font-bold text-[#0A1A12]">{session.role_title}</h2>
@@ -177,16 +178,11 @@ export const InterviewChatView: React.FC<InterviewChatViewProps> = ({
 
           return (
             <div key={q.id || idx} className="space-y-4 animate-in fade-in-50 duration-300">
-              {/* Interviewer Message Bubble with Living Bot Avatar */}
+              {/* Interviewer Message Bubble */}
               <div className="flex items-start gap-3">
-                <AIBotAvatar
-                  type="droid"
-                  size={42}
-                  state={isThisQuestionSpeaking ? 'working' : isSubmitting && isCurrentActive ? 'working' : 'default'}
-                  headphones={true}
-                  statusIndicator={isThisQuestionSpeaking ? 'speaking' : isSubmitting && isCurrentActive ? 'thinking' : 'online'}
-                  className="mt-0.5"
-                />
+                <div className="h-9 w-9 rounded-lg bg-[#004D2F] text-[#4CD681] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                  <KoboyoBrain size={18} strokeWidth={2} />
+                </div>
 
                 <div className="flex-1 max-w-3xl space-y-2">
                   <div className="flex items-center justify-between">

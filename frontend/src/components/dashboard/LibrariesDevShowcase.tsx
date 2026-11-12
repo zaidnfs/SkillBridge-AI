@@ -449,7 +449,7 @@ export const LibrariesDevShowcase: React.FC<LibrariesDevShowcaseProps> = ({ isDa
                   <select
                     value={botGlasses}
                     onChange={(e) => setBotGlasses(e.target.value as BotAvatarGlasses)}
-                    className="w-full h-8 px-2 text-xs rounded-lg border border-neutral-200 dark:border-white/10 bg-white dark:bg-[#060B08] text-neutral-800 dark:text-white"
+                    className="w-full h-8 px-2 text-xs rounded-lg border border-[#007347] bg-[#008855] text-white font-semibold cursor-pointer [&>option]:bg-white [&>option]:text-[#0A1A12]"
                   >
                     <option value="none">None</option>
                     <option value="round">Round</option>
@@ -465,7 +465,7 @@ export const LibrariesDevShowcase: React.FC<LibrariesDevShowcaseProps> = ({ isDa
                   <select
                     value={botShading}
                     onChange={(e) => setBotShading(e.target.value as BotAvatarShading)}
-                    className="w-full h-8 px-2 text-xs rounded-lg border border-neutral-200 dark:border-white/10 bg-white dark:bg-[#060B08] text-neutral-800 dark:text-white"
+                    className="w-full h-8 px-2 text-xs rounded-lg border border-[#007347] bg-[#008855] text-white font-semibold cursor-pointer [&>option]:bg-white [&>option]:text-[#0A1A12]"
                   >
                     <option value="fabric">Fabric (Plush Fur)</option>
                     <option value="plastic">Plastic (Glossy 3D)</option>

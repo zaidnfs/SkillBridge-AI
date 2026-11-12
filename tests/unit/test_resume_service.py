@@ -270,3 +270,91 @@ class TestResumeService:
         s1 = get_resume_service()
         s2 = get_resume_service()
         assert s1 is s2
+
+    def test_parse_sections_handles_latex_style_headings(self, resume_service):
+        """
+        Verify Work Experience, Skills & Interests, and Certifications & Training
+        are cleanly segmented instead of being swallowed into Education.
+        """
+        text = (
+            "Mohammad Zaid Alam\n"
+            "West Bengal, India | (+91) 89278-95633 | zaidlc319@gmail.com\n"
+            "linkedin.com/in/zaid-alam | github.com/zaidnfs\n"
+            "Work Experience\n"
+            "Salire Attitude Private Limited Bangalore, India\n"
+            "Lead Full-Stack Developer & Architect (Intern) Jan 2026 – Present\n"
+            "• Architected STREAM, a Python/Django-based platform.\n"
+            "Projects\n"
+            "HTTP Server from Scratch (GitHub) June 2025\n"
+            "Go, TCP/IP, Concurrency\n"
+            "• Built HTTP/1.1 server from raw TCP sockets in Go.\n"
+            "Education\n"
+            "Integral University Lucknow, India\n"
+            "B.Tech, Computer Science & Engineering Aug 2023 – Aug 2027\n"
+            "• Competitive Programming: Ranked Tier 1.\n"
+            "Skills & Interests\n"
+            "Languages: Python, Go, SQL\n"
+            "Backend: Django, REST APIs\n"
+            "Certifications & Training\n"
+            "• Full Stack Web Development — Udemy, 2023 • Prompt Engineering — Udemy, 2024\n"
+        )
+
+        sections = resume_service.parse_sections(text)
+        assert "experience" in sections
+        assert "projects" in sections
+        assert "education" in sections
+        assert "skills" in sections
+        assert "certifications" in sections
+        assert "Skills & Interests" not in sections["education"]
+        assert "Certifications" not in sections["education"]
+
+        contact = resume_service.parse_contact_info(text)
+        assert contact["phone"] == "(+91) 89278-95633"
+
+    def test_generate_ats_resume_latex_layout_structure(self, resume_service):
+        """
+        Verify LaTeX-style ATS DOCX uses A4 geometry, 0.5in margins, right-aligned
+        entry tabs, small-caps headings with bottom rules, and 2-column certifications.
+        """
+        raw_text = (
+            "Mohammad Zaid Alam\n"
+            "West Bengal, India | (+91) 89278-95633 | zaidlc319@gmail.com\n"
+            "linkedin.com/in/zaid-alam | github.com/zaidnfs\n"
+            "Work Experience\n"
+            "Salire Attitude Private Limited Bangalore, India\n"
+            "Lead Full-Stack Developer & Architect (Intern) Jan 2026 – Present\n"
+            "• Architected STREAM, a Python/Django-based SaaS platform.\n"
+            "Education\n"
+            "Integral University Lucknow, India\n"
+            "B.Tech, Computer Science & Engineering Aug 2023 – Aug 2027\n"
+            "Skills & Interests\n"
+            "Languages: Python, Go, SQL\n"
+            "Backend: Django, REST APIs\n"
+            "Certifications & Training\n"
+            "• Full Stack Web Development — Udemy, 2023 • Prompt Engineering — Udemy, 2024\n"
+        )
+        docx_buffer = resume_service.generate_ats_resume(
+            resume_data={
+                "candidate_name": "Zaid Alam",
+                "extracted_text": raw_text,
+                "contact_info": resume_service.parse_contact_info(raw_text),
+                "skills": ["Python", "Django", "Go", "SQL"],
+            },
+            target_job={"title": "Python Backend Developer", "extracted_skills": ["Python", "Django"]},
+        )
+
+        doc = docx.Document(docx_buffer)
+        sec = doc.sections[0]
+        assert round(sec.page_width.inches, 2) == 8.27
+        assert round(sec.left_margin.inches, 2) == 0.50
+        assert round(sec.top_margin.inches, 2) == 0.45
+
+        paragraphs = [p.text for p in doc.paragraphs]
+        assert "Mohammad Zaid Alam" in paragraphs
+        assert "West Bengal, India | (+91) 89278-95633 | zaidlc319@gmail.com" in paragraphs
+        assert "Salire Attitude Private Limited\tBangalore, India" in paragraphs
+        assert "Integral University\tLucknow, India" in paragraphs
+        assert "CERTIFICATIONS & TRAINING" in paragraphs
+        assert len(doc.tables) == 1
+        assert "Full Stack Web Development — Udemy, 2023" in doc.tables[0].cell(0, 0).text
+        assert "Prompt Engineering — Udemy, 2024" in doc.tables[0].cell(0, 1).text

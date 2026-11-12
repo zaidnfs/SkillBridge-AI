@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Sparkles, Plus, Check, Sliders, Zap } from 'lucide-react';
 import { interviewService } from '@/services/interviewService';
 import { RoleSuggestion, InterviewDifficulty, CreateSessionPayload } from '@/types/interview';
-import { AIBotAvatar } from './AIBotAvatar';
+import { KoboyoBrain } from '@/components/icons/Koboyo';
 import { AIThinkingOrb } from '@/components/shared/AIThinkingOrb';
 import { AILoadingState } from '@/components/shared/AILoadingState';
 import { BorderBeam } from 'border-beam';
@@ -13,6 +13,8 @@ interface InterviewSetupModalProps {
   onClose: () => void;
   onStartSession: (payload: CreateSessionPayload) => Promise<void>;
   isLoading: boolean;
+  initialRole?: string;
+  initialSkills?: string[];
 }
 
 const DEFAULT_ROLES = [
@@ -29,6 +31,8 @@ export const InterviewSetupModal: React.FC<InterviewSetupModalProps> = ({
   onClose,
   onStartSession,
   isLoading,
+  initialRole,
+  initialSkills,
 }) => {
   const [selectedRole, setSelectedRole] = useState('Backend Developer');
   const [customRole, setCustomRole] = useState('');
@@ -37,6 +41,27 @@ export const InterviewSetupModal: React.FC<InterviewSetupModalProps> = ({
   const [newSkillInput, setNewSkillInput] = useState('');
   const [numQuestions, setNumQuestions] = useState<number>(3);
   const [difficulty, setDifficulty] = useState<InterviewDifficulty>('intermediate');
+  const [hasAppliedInitialPrefill, setHasAppliedInitialPrefill] = useState(false);
+
+  useEffect(() => {
+    if (isOpen && (initialRole || (initialSkills && initialSkills.length > 0)) && !hasAppliedInitialPrefill) {
+      if (initialRole) {
+        const matchedDefault = DEFAULT_ROLES.find(
+          (r) => r.toLowerCase() === initialRole.toLowerCase()
+        );
+        if (matchedDefault) {
+          setSelectedRole(matchedDefault);
+          setCustomRole('');
+        } else {
+          setCustomRole(initialRole);
+        }
+      }
+      if (initialSkills && initialSkills.length > 0) {
+        setTargetSkills(initialSkills.slice(0, 10));
+      }
+      setHasAppliedInitialPrefill(true);
+    }
+  }, [isOpen, initialRole, initialSkills, hasAppliedInitialPrefill]);
 
   // Fetch role and skill recommendations from knowledge graph
   useEffect(() => {
@@ -58,6 +83,9 @@ export const InterviewSetupModal: React.FC<InterviewSetupModalProps> = ({
 
   // Update suggested skills whenever role selection changes
   useEffect(() => {
+    if (hasAppliedInitialPrefill && initialSkills && initialSkills.length > 0) {
+      return;
+    }
     const activeRole = customRole.trim() || selectedRole;
     const match = suggestedRoles.find(
       (r) => r.role_title.toLowerCase() === activeRole.toLowerCase()
@@ -117,7 +145,9 @@ export const InterviewSetupModal: React.FC<InterviewSetupModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-[#EAF2ED] bg-[#F8FAF9]">
           <div className="flex items-center gap-3.5">
-            <AIBotAvatar type="droid" size={42} headphones={true} statusIndicator={isLoading ? 'thinking' : 'online'} />
+            <div className="h-10 w-10 rounded-lg bg-[#EEF7F1] border border-[#D6E8DD] text-[#008855] flex items-center justify-center shrink-0">
+              <KoboyoBrain size={20} strokeWidth={2} />
+            </div>
             <div>
               <h2 className="text-base font-bold text-[#0A1A12]">Configure Mock Interview</h2>
               <p className="text-xs text-neutral-500">

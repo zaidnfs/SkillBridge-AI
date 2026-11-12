@@ -201,8 +201,11 @@ class ResumeGenerateATSView(views.APIView):
                 pass
 
         service = get_resume_service()
+        resume_payload = dict(resume.parsed_data or {})
+        if resume.extracted_text:
+            resume_payload["extracted_text"] = resume.extracted_text
         docx_buffer = service.generate_ats_resume(
-            resume_data=resume.parsed_data,
+            resume_data=resume_payload,
             target_job=target_job,
         )
 

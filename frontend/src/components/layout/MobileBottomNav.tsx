@@ -8,7 +8,7 @@ export const MobileBottomNav: React.FC = () => {
   return (
     <nav
       aria-label="Mobile navigation"
-      className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white/95 backdrop-blur-md border-t border-[#E2E8E5] z-40 px-4 flex items-center justify-around safe-bottom shadow-lg shadow-black/[0.03]"
+      className="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-[#004D2F]/95 backdrop-blur-md border-t border-[#00A264]/35 z-40 px-4 flex items-center justify-around safe-bottom shadow-lg shadow-black/15"
     >
       <NavLink
         to="/"
@@ -16,7 +16,7 @@ export const MobileBottomNav: React.FC = () => {
         className={({ isActive }) =>
           cn(
             'flex flex-col items-center justify-center py-1 px-2.5 text-[11px] font-medium transition-colors',
-            isActive ? 'text-[#008855] font-bold' : 'text-neutral-500 hover:text-[#0A1A12]'
+            isActive ? 'text-[#4CD681] font-bold' : 'text-[#D1DDD4] hover:text-white'
           )
         }
       >
@@ -29,7 +29,7 @@ export const MobileBottomNav: React.FC = () => {
         className={({ isActive }) =>
           cn(
             'flex flex-col items-center justify-center py-1 px-2.5 text-[11px] font-medium transition-colors',
-            isActive ? 'text-[#008855] font-bold' : 'text-neutral-500 hover:text-[#0A1A12]'
+            isActive ? 'text-[#4CD681] font-bold' : 'text-[#D1DDD4] hover:text-white'
           )
         }
       >
@@ -42,7 +42,7 @@ export const MobileBottomNav: React.FC = () => {
         className={({ isActive }) =>
           cn(
             'flex flex-col items-center justify-center py-1 px-2.5 text-[11px] font-medium transition-colors',
-            isActive ? 'text-[#008855] font-bold' : 'text-neutral-500 hover:text-[#0A1A12]'
+            isActive ? 'text-[#4CD681] font-bold' : 'text-[#D1DDD4] hover:text-white'
           )
         }
       >
@@ -55,7 +55,7 @@ export const MobileBottomNav: React.FC = () => {
         className={({ isActive }) =>
           cn(
             'flex flex-col items-center justify-center py-1 px-2.5 text-[11px] font-medium transition-colors',
-            isActive ? 'text-[#008855] font-bold' : 'text-neutral-500 hover:text-[#0A1A12]'
+            isActive ? 'text-[#4CD681] font-bold' : 'text-[#D1DDD4] hover:text-white'
           )
         }
       >
