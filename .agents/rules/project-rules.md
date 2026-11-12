@@ -27,7 +27,7 @@ Before every task, read these files in this order:
 ### 1. One Task at a Time
 Work on exactly one task from `TASK.md` at a time. Follow the workflow:
 ```
-Understand → Plan → Implement → Test → Review → Commit → Update Docs
+Understand → Plan → Implement → Test → Security Audit (/security-audit) → Review → Commit → Update Docs
 ```
 
 ### 2. Do Not Deviate from Architecture
@@ -51,19 +51,26 @@ Every feature must have tests as specified in `TEST_PLAN.md`. Do not:
 - Disable or skip tests without documenting why.
 - Deploy without running the test suite.
 
-### 5. Keep Documentation Current
+### 5. Mandatory Post-Task Security Audit (`/security-audit`)
+As soon as implementation and testing are finished for any task, you **MUST** run a `/security-audit` review on all touched files:
+- Inspect newly written code against injection (SQL, Cypher, prompt injection), missing auth/object permissions (IDOR), secret leaks, and data exposure.
+- Remediate and eliminate any identified risk or security issue immediately.
+- Do not mark the task complete or commit until all security findings are resolved.
+
+### 6. Keep Documentation Current
 After completing a task:
 - Update `TASK.md` — mark the task as complete.
-- Update `MEMORY.md` — reflect the new project state.
+- Update `MEMORY.md` — reflect the new project state and record security audit verification.
 - Update `ARCHITECTURE.md` if you added new services, models, or integrations.
 - Update `DECISIONS.md` if you made a significant technical choice.
 
-### 6. Security Is Non-Negotiable
-Follow `SECURITY.md` at all times:
+### 7. Security Is Non-Negotiable
+Follow `SECURITY.md` and `.agents/rules/security-audit.md` at all times:
 - Never commit secrets.
 - Always validate input server-side.
 - Always check authorization on user-owned resources.
 - Always sanitize LLM outputs before display.
+- Run `/security-audit` immediately after every task.
 
 ---
 
@@ -77,8 +84,9 @@ This project follows the **Vibe Coding** methodology documented in `Docs/VIBE_CO
 4. **Use structured prompts.** Context, Task, Files, Constraints, Acceptance Criteria, Testing.
 5. **Small tasks, small commits.** One task = one logical unit of work.
 6. **Test every feature.** Lint, type check, unit tests, integration tests.
-7. **Review before committing.** Check against PRD, Architecture, Design, Rules.
-8. **Update documentation continuously.** Docs describe the current project, not a past version.
+7. **Perform security audit.** Check `/security-audit` and eliminate risks as soon as testing passes.
+8. **Review before committing.** Check against PRD, Architecture, Design, Rules.
+9. **Update documentation continuously.** Docs describe the current project, not a past version.
 
 ---
 

@@ -154,7 +154,7 @@ class TestProcessingTask:
             is_processed=False,
         )
 
-        result = process_unprocessed_jobs(batch_size=10)
+        result = process_unprocessed_jobs(batch_size=10, populate_graph=False)
         assert result["status"] == "completed"
         assert result["processed_count"] == 1
 

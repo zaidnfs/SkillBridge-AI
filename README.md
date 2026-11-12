@@ -61,12 +61,24 @@ Final-Year-project/
 
 ### Prerequisites
 
-- Python 3.11+
-- Docker & Docker Compose
-- Git
+- Python 3.11 or 3.12 (recommended for macOS/Windows prebuilt ML/NLP wheels)
 - Node.js 18+
+- Git
+- Docker & Docker Compose *(optional — SQLite + in-memory Qdrant + fallback LLM mode work out of the box for demos)*
 
-### Setup
+### macOS Quick Demo Setup (Recommended)
+
+```bash
+git clone <repository-url>
+cd Final-Year-project
+bash scripts/setup_mac.sh
+bash scripts/run_demo_mac.sh
+```
+
+Then open **`http://localhost:5173`** in your browser.
+*(Pass `--docker` to `bash scripts/run_demo_mac.sh --docker` if you want to also spin up PostgreSQL, Neo4j, Redis, and Qdrant via Docker.)*
+
+### Manual Setup (Windows / macOS / Linux)
 
 1. **Clone the repository:**
    ```bash
@@ -78,58 +90,41 @@ Final-Year-project/
    ```bash
    cp .env.example .env
    ```
-   Fill in the values in `.env`.
+   Set a strong `DJANGO_SECRET_KEY` in `.env` (and optional `ADZUNA_APP_ID`/`ADZUNA_APP_KEY` if fetching live jobs).
 
-3. **Start local services:**
+3. **Optional — Start Docker services (PostgreSQL, Neo4j, Redis, Qdrant):**
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
-   This starts PostgreSQL, Neo4j, Redis, and Qdrant.
 
 4. **Create virtual environment and install dependencies:**
    ```bash
-   python -m venv venv
-   venv\Scripts\activate       # Windows
+   python3 -m venv .venv
+   source .venv/bin/activate       # macOS / Linux
+   # .venv\Scripts\activate        # Windows
    pip install -r backend/requirements.txt
+   python -m spacy download en_core_web_sm
    ```
 
-5. **Run migrations:**
+5. **Run migrations & seed demo data:**
    ```bash
-   cd backend
-   python manage.py migrate
+   python backend/manage.py migrate
+   python backend/manage.py seed_learning_resources
+   python backend/manage.py seed_demo_jobs
    ```
 
-6. **Create superuser:**
+6. **Start the backend server:**
    ```bash
-   python manage.py createsuperuser
+   python backend/manage.py runserver 127.0.0.1:8000
    ```
 
-7. **Start the development server:**
+7. **Install and start the frontend dev server (separate terminal):**
    ```bash
-   python manage.py runserver
+   cd frontend
+   npm install
+   npm run dev
    ```
-
-8. **Start Celery worker (separate terminal):**
-   ```bash
-   celery -A config worker --loglevel=info
-   ```
-
-9. **Start Celery beat (separate terminal):**
-   ```bash
-   celery -A config beat --loglevel=info
-   ```
-
-10. **Install frontend dependencies:**
-    ```bash
-    cd ../frontend
-    npm install
-    ```
-
-11. **Start the frontend dev server:**
-    ```bash
-    npm run dev
-    ```
-    The React app runs at `http://localhost:5173` and proxies API requests to Django.
+   The React app runs at `http://localhost:5173` and proxies `/api` and `/media` requests to Django.
 
 ## 📖 Documentation
 

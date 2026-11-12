@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     # Local apps
     "apps.accounts",
     "apps.jobs",
+    "apps.resumes",
+    "apps.skills",
+    "apps.interviews",
 ]
 
 MIDDLEWARE = [
@@ -194,3 +197,38 @@ CELERY_BEAT_SCHEDULE = {
 # NLP & Machine Learning Settings
 SPACY_MODEL = env("SPACY_MODEL", default="en_core_web_sm")
 EMBEDDING_MODEL_NAME = env("EMBEDDING_MODEL_NAME", default="all-MiniLM-L6-v2")
+
+# Knowledge Graph (Neo4j) Settings
+NEO4J_URI = env("NEO4J_URI", default="bolt://localhost:7687")
+NEO4J_USER = env("NEO4J_USER", default="neo4j")
+NEO4J_PASSWORD = env("NEO4J_PASSWORD", default="neo4j_dev_pass")
+NEO4J_DATABASE = env("NEO4J_DATABASE", default="neo4j")
+NEO4J_MAX_CONNECTION_POOL_SIZE = env.int("NEO4J_MAX_CONNECTION_POOL_SIZE", default=50)
+
+# Vector Store (Qdrant) Settings
+QDRANT_URL = env("QDRANT_URL", default="http://localhost:6333")
+QDRANT_API_KEY = env("QDRANT_API_KEY", default="")
+QDRANT_COLLECTION_NAME = env("QDRANT_COLLECTION_NAME", default="job_postings")
+QDRANT_IN_MEMORY = env.bool("QDRANT_IN_MEMORY", default=False)
+
+# LLM (Ollama) & Agent Settings
+OLLAMA_BASE_URL = env("OLLAMA_BASE_URL", default="http://localhost:11434")
+OLLAMA_MODEL = env("OLLAMA_MODEL", default="llama3.1")
+OLLAMA_TIMEOUT = env.float("OLLAMA_TIMEOUT", default=30.0)
+LLM_FALLBACK_MODE = env.bool("LLM_FALLBACK_MODE", default=True)
+PROMPTS_DIR = BASE_DIR / "prompts"
+
+# Speech & Audio Processing (Phase 3.3 - TASK-055 & TASK-056)
+WHISPER_MODEL_SIZE = env("WHISPER_MODEL_SIZE", default="base.en")
+WHISPER_DEVICE = env("WHISPER_DEVICE", default="cpu")
+WHISPER_COMPUTE_TYPE = env("WHISPER_COMPUTE_TYPE", default="int8")
+WHISPER_CPU_THREADS = env.int("WHISPER_CPU_THREADS", default=4)
+WHISPER_MOCK_MODE = env.bool("WHISPER_MOCK_MODE", default=False)
+MAX_AUDIO_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
+MAX_AUDIO_DURATION_SECONDS = 180  # 3 minutes
+
+# Text-to-Speech (TTS) Settings
+TTS_PROVIDER = env("TTS_PROVIDER", default="piper")
+TTS_VOICE = env("TTS_VOICE", default="en_US-lessac-medium")
+TTS_CACHE_DIR = BASE_DIR / "media" / "tts_cache"
+

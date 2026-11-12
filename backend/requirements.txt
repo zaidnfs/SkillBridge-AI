@@ -28,3 +28,17 @@ spacy>=3.8,<4.0
 sentence-transformers>=3.0,<4.0
 numpy>=1.26,<3.0
 
+# Speech Processing (Phase 3.3)
+faster-whisper>=1.0.0,<2.0.0
+
+# Knowledge Graph & Vector Store
+neo4j>=5.15,<6.0
+qdrant-client>=1.7,<2.0
+
+# AI & Agentic Orchestration
+langgraph>=0.2.0,<0.3.0
+langchain-core>=0.3.0,<0.4.0
+
+# Document & Resume Processing
+pypdf>=4.0.0,<5.0.0
+python-docx>=1.1.0,<2.0.0
