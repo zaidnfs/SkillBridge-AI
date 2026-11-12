@@ -63,19 +63,33 @@ fi
 
 # 6. Run migrations & seed demo data
 echo "Running Django database migrations..."
-python backend/manage.py migrate
+python manage.py migrate
 
 echo "Seeding learning resources..."
-python backend/manage.py seed_learning_resources
+python manage.py seed_learning_resources
 
 echo "Seeding demo job postings..."
-python backend/manage.py seed_demo_jobs
+python manage.py seed_demo_jobs
 
-# 7. Install frontend dependencies
+# 7. Install frontend dependencies with macOS native binaries
 echo "Installing frontend dependencies..."
+ARCH_BINDING=""
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  if [[ "$(uname -m)" == "arm64" ]]; then
+    ARCH_BINDING="@rolldown/binding-darwin-arm64"
+  else
+    ARCH_BINDING="@rolldown/binding-darwin-x64"
+  fi
+fi
+
+# If node_modules came from Windows or is missing the Darwin native binding, wipe it for a clean install
+if [[ -n "$ARCH_BINDING" && ! -d "frontend/node_modules/$ARCH_BINDING" ]]; then
+  echo "Notice: Missing macOS native binding ($ARCH_BINDING). Removing cross-platform cache..."
+  rm -rf frontend/node_modules frontend/package-lock.json
+fi
+
 npm --prefix frontend install
 
 echo ""
 echo "=== Setup complete! ==="
 echo "Run the app anytime with: bash scripts/run_demo_mac.sh"
-

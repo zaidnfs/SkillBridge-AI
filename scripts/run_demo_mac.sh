@@ -5,13 +5,25 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
 if [[ ! -d ".venv" ]]; then
-  echo "Virtual environment not found. Run 'bash scripts/setup_mac.sh' first."
-  exit 1
+  echo "Virtual environment not found. Running setup first..."
+  bash scripts/setup_mac.sh
 fi
 
-if [[ ! -d "frontend/node_modules" ]]; then
-  echo "Frontend dependencies missing. Run 'bash scripts/setup_mac.sh' first."
-  exit 1
+# Ensure macOS native Vite rolldown binding exists
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  ARCH_BINDING="frontend/node_modules/@rolldown/binding-darwin-arm64"
+  if [[ "$(uname -m)" != "arm64" ]]; then
+    ARCH_BINDING="frontend/node_modules/@rolldown/binding-darwin-x64"
+  fi
+  if [[ ! -d "$ARCH_BINDING" ]]; then
+    echo "Notice: Detected missing macOS native Vite binding ($ARCH_BINDING)."
+    echo "Rebuilding frontend dependencies for macOS..."
+    rm -rf frontend/node_modules frontend/package-lock.json
+    npm --prefix frontend install
+  fi
+elif [[ ! -d "frontend/node_modules" ]]; then
+  echo "Frontend dependencies missing. Installing..."
+  npm --prefix frontend install
 fi
 
 # shellcheck disable=SC1091
@@ -28,7 +40,7 @@ if [[ "${1:-}" == "--docker" ]]; then
 fi
 
 # Ensure migrations & seed data exist before starting
-python backend/manage.py migrate --noinput >/dev/null
+python manage.py migrate --noinput >/dev/null
 
 cleanup() {
   echo ""
@@ -44,7 +56,7 @@ cleanup() {
 trap cleanup INT TERM EXIT
 
 echo "Starting Django backend on http://127.0.0.1:8000 ..."
-python backend/manage.py runserver 127.0.0.1:8000 &
+python manage.py runserver 127.0.0.1:8000 &
 BACKEND_PID=$!
 
 echo "Starting Vite frontend on http://localhost:5173 ..."
@@ -59,4 +71,3 @@ echo "Press Ctrl+C to stop both servers."
 echo ""
 
 wait "$BACKEND_PID" "$FRONTEND_PID"
-
